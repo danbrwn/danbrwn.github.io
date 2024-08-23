@@ -88,3 +88,18 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Code block styling */
+pre {
+    white-space: pre-wrap; /* This ensures long lines break and wrap within the container */
+    word-wrap: break-word; /* Prevents words from overflowing */
+    background-color: #f4f4f4; /* Light grey background for code blocks */
+    padding: 10px; /* Padding around the code block */
+    border-radius: 5px; /* Rounded corners */
+    overflow-x: auto; /* Adds horizontal scrollbar if needed */
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+    font-size: 14px; /* Font size for code */
+}
+
