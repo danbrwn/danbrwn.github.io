@@ -64,6 +64,45 @@
         return prompt;
             </pre>
         </div>
+        <div class="project">
+            <h3>Extracting Analog Alarm Details</h3>
+            <p>This function extracts details from analog alarm configurations in PLC programs. It uses regular expressions to parse the content and retrieve relevant alarm thresholds, including Hi_Hi, Hi, Lo_Lo, and Lo values.</p>
+            <p><strong>Example Code:</strong></p>
+            <pre><code>
+        function extractAnalogAlarmDetails(content) {
+            const regex = /(\w+)\s*:\s*(ANALOG|ANALOG_ALARM)\s*\(Description\s*:=\s*"([^"]*)"\)\s*:=\s*\[(.*?)\];/gs;
+            const matches = [...content.matchAll(regex)];
+            const details = matches.map(match => {
+                const tag = match[1];
+                const type = match[2];
+                let description = match[3].replace(/\$N/g, ' '); // Replace $N with space
+                const values = match[4].split(',').map(v => v.trim());
+                
+                if (type === "ANALOG_ALARM" && values.length >= 16) {
+                    return {
+                        TAG: tag,
+                        Description: description,
+                        Hi_Hi: parseFloat(values[12]),
+                        Hi: parseFloat(values[13]),
+                        Lo_Lo: parseFloat(values[14]),
+                        Lo: parseFloat(values[15])
+                    };
+                } else if (type === "ANALOG" && values.length >= 16) {
+                    return {
+                        TAG: tag,
+                        Description: description,
+                        Hi_Hi: parseFloat(values[12]),
+                        Hi: parseFloat(values[13]),
+                        Lo_Lo: parseFloat(values[14]),
+                        Lo: parseFloat(values[15])
+                    };
+                }
+                return null;
+            }).filter(detail => detail !== null);
+            return details;
+        }
+            </code></pre>
+        </div>
         
         
         <div class="project">
