@@ -65,9 +65,12 @@
             </pre>
         </div>
         <div class="project">
-            <h3>Extracting Analog Alarm Details</h3>
-            <p>This function extracts details from analog alarm configurations in PLC programs. It uses regular expressions to parse the content and retrieve relevant alarm thresholds, including Hi_Hi, Hi, Lo_Lo, and Lo values.</p>
-            <p><strong>Example Code:</strong></p>
+            <h3>Document Alarm Values ControlLogix PLC</h3>
+            <p>Developed a Node.js script to extract all digital and analog alarm block parameters from a ControlLogix exported file.</p>
+            <p><strong>Challenge:</strong> Documenting current PLC alarm settings for a large set of alarms and PLCs, and validating these settings against best practices.</p>
+            <p><strong>Solution:</strong> I wrote a Node.js script to parse alarm structures and extract settings from ControlLogix L5K exported programs.</p>
+            <p><strong>Outcome:</strong> I was able to efficiently retrieve data for all alarms, making it easy to document and validate the alarm levels.</p>
+            <p><strong>Example:</strong></p>
             <pre><code>
         function extractAnalogAlarmDetails(content) {
             const regex = /(\w+)\s*:\s*(ANALOG|ANALOG_ALARM)\s*\(Description\s*:=\s*"([^"]*)"\)\s*:=\s*\[(.*?)\];/gs;
