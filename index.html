@@ -26,6 +26,20 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project">
+            <h3>ControlLogix PLC to Boolean Expressions</h3>
+            <p>Developed an application to parse ControlLogix L5K export programs into boolean equivalent statements.</p>
+            <p><strong>Challenge:</strong> Functional descriptions of operations needed updating after 15 years of changes. Users could not evaluate PLC rungs. Going through PLC rung by rung for approximately 50 PLCs would have been extremely time-consuming.</p>
+            <p><strong>Solution:</strong> I wrote a Node.js application to parse strings using complex regular expressions, converting ControlLogix statements into boolean expressions.</p>
+            <p><strong>Outcome:</strong> The code allowed validation of the functions against the PLC code, providing the end-user with understandable boolean expressions for complex PLC code.</p>
+            <p><strong>Example:</strong></p>
+            <pre>
+        // Step 5: Ensure AND between tags like CommMatrix[5].RXDataBytes[0].3 CommMatrix[5].RXDataBytes[0].8
+        // This regex ensures there is an " AND " between such tags if they are adjacent without any separator.
+        line = line.replace(/(\w+\[\d+\]\.\w+\[\d+\]\.\d+)\s+(?=\w+\[\d+\]\.\w+\[\d+\]\.\d+)/g, '$1 AND ');
+            </pre>
+        </div>
+        
+        <div class="project">
             <h3>Power Monitoring Application</h3>
             <p>I developed a power monitoring application that collects data via Modbus and CIP using Node.js. The front-end is built with Angular and Material Design, offering a user-friendly interface for monitoring power usage. The system stores data in the cloud for easy access and reporting, providing critical insights into energy consumption.</p>
             <a href="https://github.com/yourusername/repo1">View Project on GitHub</a>
