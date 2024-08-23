@@ -38,6 +38,33 @@
         line = line.replace(/(\w+\[\d+\]\.\w+\[\d+\]\.\d+)\s+(?=\w+\[\d+\]\.\w+\[\d+\]\.\d+)/g, '$1 AND ');
             </pre>
         </div>
+        <div class="project">
+            <h3>Boolean Expression to Natural Language Using OpenAI API</h3>
+            <p>Developed a Node.js script to translate boolean language statements into a natural language synopsis of operations.</p>
+            <p><strong>Challenge:</strong> Provide a more comprehensive explanation of boolean logic to better explain operations.</p>
+            <p><strong>Solution:</strong> I wrote a program to interface with the OpenAI API and trained the model to produce accurate results. I developed prompts tailored to generate natural language explanations corresponding to PLC code rungs from ControlLogix PLC.</p>
+            <p><strong>Outcome:</strong> The code performed well, but it was ultimately decided that the target audience was sufficiently supported by the original boolean conversion.</p>
+            <p><strong>Example:</strong></p>
+            <pre>
+        const prompt = `Evaluate the following logical expression and provide a plain English explanation. 
+        Here are the definitions of the terms used:${mappingsString}
+        The expression includes tag names and descriptions separated by a '|' character. For example, 'R77M2|BAGHOUSE ID MOT COOL F1..MOK' means the tag name is 'R77M2' and the description is 'BAGHOUSE ID MOT COOL F1..MOK'.
+        Logical expression:${cleanedExpression}
+        Additionally, provide a textual flowchart with conditions and actions based on the logical expression. 
+        Each condition should be clearly defined and include the logical steps leading to the final action and retain the OR and AND keywords between steps.
+        Parentheses in the code should be evaluated as grouping statements for consideration as a whole.
+        Nested parentheses should indicate order of operations with inner most evaluated first.
+        Within enclosing parentheses AND conditions represents sequential actions and OR conditions branching conditions.
+        Conditions should be evaluated from left to right and inner parenthesis to outer parenthesis.
+        In evaluation order of operations OR represents a branching of logic and AND a joining condition.
+        Tag descriptions are designated with the following pattern tag|description where the | character is the delimiter.
+        Include the tag and descriptions in both the descriptive and flowchart outputs.
+        Plain English output should be designated as 'Plain English Explanation:'.
+        Flowchart output should be designated as 'Textual Flowchart:'.`;
+        return prompt;
+            </pre>
+        </div>
+        
         
         <div class="project">
             <h3>Power Monitoring Application</h3>
