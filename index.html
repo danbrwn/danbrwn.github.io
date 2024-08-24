@@ -49,7 +49,7 @@
             <div class="video-container" style="position: relative;">
                 <!-- Preload Video -->
                 <video muted autoplay loop playsinline preload="auto"
-                       style="width: 100%; display: block; cursor:pointer;" 
+                       style="width: 100%; display: block; " 
                        (click)="loadVideo()" *ngIf="!videoLoaded">
                     <source src="/assets/placeholder_720_h264.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -61,7 +61,28 @@
             <p>For more details, explore the <a href="https://changeflow.ind-docs.app" target="_blank">ChangeFlow website</a> or sign up for a <a href="https://changeflow.ind-docs.app/trial" target="_blank">free trial</a> to experience how ChangeFlow can transform your change management processes.</p>
         </div>
         
-        
+        <div class="project">
+            <h3>Power Monitoring Application</h3>
+            <p>I developed a power monitoring application that collects data via Modbus and CIP using Node.js. The front-end is built with Angular and Material Design, offering a user-friendly interface for monitoring power usage. The system stores data in the cloud for easy access and reporting, providing critical insights into energy consumption.</p>
+            
+            <h4>Technology Stack</h4>
+            <ul>
+                <li><strong>Frontend:</strong> Angular, Material Design, Typescript</li>
+                <li><strong>Backend:</strong> Node.js, Firebase, Firebase Functions, Express.js</li>
+                <li><strong>Database:</strong> MongoDB</li>
+                <li><strong>Hosting:</strong> localhost</li>
+            </ul>
+            <div class="images">
+                <figure>
+                    <img src="assets/PMSpc.webp" alt="Specific Power Consumption" style="width:100%; max-width:400px;">
+                    <figcaption>Specific Power Consumption</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/PMMeters.webp" alt="Meters" style="width:100%; max-width:400px;">
+                    <figcaption>Meters</figcaption>
+                </figure>
+            </div>
+        </div>
         
         <div class="project">
             <h3>Automated Documenting ControlLogix PLC Functional Descriptions</h3>
@@ -146,18 +167,7 @@
         
         
         
-        <div class="project">
-            <h3>Power Monitoring Application</h3>
-            <p>I developed a power monitoring application that collects data via Modbus and CIP using Node.js. The front-end is built with Angular and Material Design, offering a user-friendly interface for monitoring power usage. The system stores data in the cloud for easy access and reporting, providing critical insights into energy consumption.</p>
-            <a href="https://github.com/yourusername/repo1">View Project on GitHub</a>
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Frontend:</strong> Angular, Material Design, Typescript</li>
-                <li><strong>Backend:</strong> Node.js, Firebase, Firebase Functions, Express.js</li>
-                <li><strong>Database:</strong> MongoDB</li>
-                <li><strong>Hosting:</strong> localhost</li>
-            </ul>
-        </div>
+        
         
         <div class="project">
             <h3>Raspberry Pi Document Server</h3>
