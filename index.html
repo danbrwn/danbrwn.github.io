@@ -48,24 +48,11 @@
                     <source src="/assets/placeholder_720_h264.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <div class="video-overlay" *ngIf="!videoLoaded" (click)="loadVideo()">
-                    Click to Load Full Video
-                </div>
-                <!-- Full Video -->
-                <video controls *ngIf="videoLoaded" preload="auto" style="width: 100%; display: block;">
-                    <source src="https://your-firebase-video-url.com/video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                
             </div>
             
             <h4>Additional Information</h4>
             <p>For more details, explore the <a href="https://changeflow.ind-docs.app" target="_blank">ChangeFlow website</a> or sign up for a <a href="https://changeflow.ind-docs.app/trial" target="_blank">free trial</a> to experience how ChangeFlow can transform your change management processes.</p>
-            
-            <div class="banner">
-                <img src="assets/Firebase Hosting Light.png" alt="Firebase Hosting">
-                <img src="assets/Firebase Authentication Light.png" alt="Firebase Authentication">
-                <img src="assets/Cloud Firestore Light.png" alt="Firebase Storage">
-            </div>
         </div>
         
         
