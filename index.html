@@ -208,7 +208,15 @@
             <p>I set up a Raspberry Pi as a wireless access point, turning it into a portable document server. Users can
                 access a document tree via QR codes, making it ideal for use in industrial settings where quick access
                 to documentation is crucial.</p>
-
+                <h4>Technology Stack</h4>
+    <ul>
+        <li><strong>Frontend:</strong> EJS (Embedded JavaScript) for templating with Express EJS Layouts for layout management.</li>
+        <li><strong>Backend:</strong> Node.js with Express framework, utilizing middleware like `body-parser` for handling form data, `helmet` for security, and `serve-index` for directory listing.</li>
+        <li><strong>Database:</strong> SQLite3, providing lightweight and efficient database management, integrated with a custom database layer for managing users, roles, and departments.</li>
+        <li><strong>File Handling:</strong> `Multer` for file uploads, with disk storage for managing uploaded files.</li>
+        <li><strong>Security:</strong> Basic security features using `helmet`.</li>
+        <li><strong>Templating:</strong> Dynamic content rendering with EJS templates, providing a flexible view engine.</li>
+    </ul>
             <div class="media-section">
                 <h4>Application Demo</h4>
                 <video controls style="width: 50%; max-width: 400px;">
