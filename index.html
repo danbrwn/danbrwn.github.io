@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dan Brown - Embedded Systems and Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Home/Introduction Section -->
     <header>
         <h1>Dan Brown - Embedded Systems and Software Engineer</h1>
-        <p>Welcome to my portfolio! I'm Dan Brown, a seasoned software engineer specializing in embedded firmware and industrial applications. With over two decades of experience, I bring a wealth of knowledge in PLC programming, embedded systems, and software development to every project I work on. My expertise spans across industries, and I'm passionate about creating efficient, reliable, and scalable systems that drive innovation and operational excellence.</p>
+        <p>Welcome to my portfolio! I'm Dan Brown, a seasoned software engineer specializing in embedded firmware and
+            industrial applications. With over two decades of experience, I bring a wealth of knowledge in PLC
+            programming, embedded systems, and software development to every project I work on. My expertise spans
+            across industries, and I'm passionate about creating efficient, reliable, and scalable systems that drive
+            innovation and operational excellence.</p>
     </header>
 
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I hold an AAS in Industrial Electronics Technology and have completed extensive coursework in Computer Information Systems at Troy State University. My career has taken me through a variety of roles, from designing complex control systems to developing custom firmware for microcontrollers. Over the years, I’ve honed my skills in programming, circuit design, and system integration, with a focus on embedded systems and industrial automation.</p>
-        <p><strong>Objective:</strong> I’m seeking to leverage my expertise in PLC programming, embedded systems, and software support tools in a dynamic environment to contribute to the success of an innovative company.</p>
+        <p>I hold an AAS in Industrial Electronics Technology and have completed extensive coursework in Computer
+            Information Systems at Troy State University. My career has taken me through a variety of roles, from
+            designing complex control systems to developing custom firmware for microcontrollers. Over the years, I’ve
+            honed my skills in programming, circuit design, and system integration, with a focus on embedded systems and
+            industrial automation.</p>
+        <p><strong>Objective:</strong> I’m seeking to leverage my expertise in PLC programming, embedded systems, and
+            software support tools in a dynamic environment to contribute to the success of an innovative company.</p>
         <!-- Optional: Add a professional photo and a link to download your resume -->
         <p><a href="resume.pdf" download>Download My Resume</a></p>
     </section>
@@ -27,45 +38,56 @@
         <h2>Projects</h2>
         <div class="project">
             <h3>ChangeFlow - Streamlining Change Management</h3>
-            <p>ChangeFlow is a comprehensive platform designed to simplify and automate change management across various industries, enhancing efficiency and ensuring compliance. Ideal for industries like manufacturing, healthcare, and tech, ChangeFlow integrates seamlessly into your operations.</p>
-            
+            <p>ChangeFlow is a comprehensive platform designed to simplify and automate change management across various
+                industries, enhancing efficiency and ensuring compliance. Ideal for industries like manufacturing,
+                healthcare, and tech, ChangeFlow integrates seamlessly into your operations.</p>
+
             <h4>Features and Benefits</h4>
             <ul>
-                <li><strong>Automated Change Management:</strong> Automates change request processes, reducing manual errors.</li>
-                <li><strong>Advanced Segmentation:</strong> Uses cutting-edge technology to ensure only qualified experts can initiate changes, enhancing security and compliance.</li>
-                <li><strong>Role-Specific Authorization:</strong> Enables precise control over who can request, approve, and implement changes.</li>
-                <li><strong>Intuitive Interface:</strong> User-friendly design for managing permissions and authorizations.</li>
+                <li><strong>Automated Change Management:</strong> Automates change request processes, reducing manual
+                    errors.</li>
+                <li><strong>Advanced Segmentation:</strong> Uses cutting-edge technology to ensure only qualified
+                    experts can initiate changes, enhancing security and compliance.</li>
+                <li><strong>Role-Specific Authorization:</strong> Enables precise control over who can request, approve,
+                    and implement changes.</li>
+                <li><strong>Intuitive Interface:</strong> User-friendly design for managing permissions and
+                    authorizations.</li>
                 <li><strong>Customizable Detail Levels:</strong> Tailors management to specific facility areas.</li>
-                <li><strong>Email Notifications:</strong> Automates notifications to stakeholders at each workflow step.</li>
+                <li><strong>Email Notifications:</strong> Automates notifications to stakeholders at each workflow step.
+                </li>
                 <li><strong>Optional SMS/Push Notifications:</strong> Optional SMS and Push Notifications.</li>
             </ul>
             <h4>Technology Stack</h4>
-        <ul>
-            <li><strong>Frontend:</strong> Angular, Bootstrap, Typescript</li>
-            <li><strong>Backend:</strong> Node.js, Firebase, Firebase Functions, Express.js</li>
-            <li><strong>Database:</strong> Cloud Firestore</li>
-            <li><strong>Hosting:</strong> Firebase Hosting</li>
-        </ul>
+            <ul>
+                <li><strong>Frontend:</strong> Angular, Bootstrap, Typescript</li>
+                <li><strong>Backend:</strong> Node.js, Firebase, Firebase Functions, Express.js</li>
+                <li><strong>Database:</strong> Cloud Firestore</li>
+                <li><strong>Hosting:</strong> Firebase Hosting</li>
+            </ul>
             <h4>Visual Overview</h4>
             <div class="video-container" style="position: relative;">
                 <!-- Preload Video -->
-                <video muted autoplay loop playsinline preload="auto"
-                       style="width: 100%; display: block; " 
-                       (click)="loadVideo()" *ngIf="!videoLoaded">
+                <video muted autoplay loop playsinline preload="auto" style="width: 100%; display: block; "
+                    (click)="loadVideo()" *ngIf="!videoLoaded">
                     <source src="/assets/placeholder_720_h264.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                
+
             </div>
-            
+
             <h4>Additional Information</h4>
-            <p>For more details, explore the <a href="https://changeflow.ind-docs.app" target="_blank">ChangeFlow website</a> or sign up for a <a href="https://changeflow.ind-docs.app/trial" target="_blank">free trial</a> to experience how ChangeFlow can transform your change management processes.</p>
+            <p>For more details, explore the <a href="https://changeflow.ind-docs.app" target="_blank">ChangeFlow
+                    website</a> or sign up for a <a href="https://changeflow.ind-docs.app/trial" target="_blank">free
+                    trial</a> to experience how ChangeFlow can transform your change management processes.</p>
         </div>
-        
+
         <div class="project">
             <h3>Power Monitoring Application</h3>
-            <p>I developed a power monitoring application that collects data via Modbus and CIP using Node.js. The front-end is built with Angular and Material Design, offering a user-friendly interface for monitoring power usage. The system stores data in the cloud for easy access and reporting, providing critical insights into energy consumption.</p>
-            
+            <p>I developed a power monitoring application that collects data via Modbus and CIP using Node.js. The
+                front-end is built with Angular and Material Design, offering a user-friendly interface for monitoring
+                power usage. The system stores data in the cloud for easy access and reporting, providing critical
+                insights into energy consumption.</p>
+
             <h4>Technology Stack</h4>
             <ul>
                 <li><strong>Frontend:</strong> Angular, Material Design, Typescript</li>
@@ -84,21 +106,32 @@
                 </figure>
             </div>
         </div>
-        
+
         <div class="project">
             <h3>Automated Documenting ControlLogix PLC Functional Descriptions</h3>
-            <p>Developed a series of Node.js scripts to document and validate ControlLogix PLC functional descriptions, translating complex PLC logic into understandable formats.</p>
-            
-            <p><strong>Challenge:</strong> Updating functional descriptions after 15 years of changes across approximately 50 PLCs, and validating settings against best practices, all while making the information comprehensible for users who cannot evaluate PLC rungs directly.</p>
-            
+            <p>Developed a series of Node.js scripts to document and validate ControlLogix PLC functional descriptions,
+                translating complex PLC logic into understandable formats.</p>
+
+            <p><strong>Challenge:</strong> Updating functional descriptions after 15 years of changes across
+                approximately 50 PLCs, and validating settings against best practices, all while making the information
+                comprehensible for users who cannot evaluate PLC rungs directly.</p>
+
             <p><strong>Solution:</strong></p>
             <ul>
-                <li><strong>ControlLogix PLC to Boolean Expressions:</strong> Wrote a Node.js script to parse ControlLogix L5K export programs into boolean equivalent statements, using complex regular expressions.</li>
-                <li><strong>Boolean Expression to Natural Language Using OpenAI API:</strong> Developed a Node.js script to translate boolean language statements into a natural language synopsis, providing a comprehensive explanation of operations.</li>
-                <li><strong>Document Alarm Values ControlLogix PLC:</strong> Created a Node.js script to extract digital and analog alarm block parameters from ControlLogix exported files, simplifying the documentation and validation process for a large set of alarms.</li>
+                <li><strong>ControlLogix PLC to Boolean Expressions:</strong> Wrote a Node.js script to parse
+                    ControlLogix L5K export programs into boolean equivalent statements, using complex regular
+                    expressions.</li>
+                <li><strong>Boolean Expression to Natural Language Using OpenAI API:</strong> Developed a Node.js script
+                    to translate boolean language statements into a natural language synopsis, providing a comprehensive
+                    explanation of operations.</li>
+                <li><strong>Document Alarm Values ControlLogix PLC:</strong> Created a Node.js script to extract digital
+                    and analog alarm block parameters from ControlLogix exported files, simplifying the documentation
+                    and validation process for a large set of alarms.</li>
             </ul>
-            
-            <p><strong>Outcome:</strong> The combined efforts allowed for accurate documentation, validation, and explanation of complex PLC code, making it accessible and understandable for end users. This streamlined the process of updating and validating the PLC functional descriptions.</p>
+
+            <p><strong>Outcome:</strong> The combined efforts allowed for accurate documentation, validation, and
+                explanation of complex PLC code, making it accessible and understandable for end users. This streamlined
+                the process of updating and validating the PLC functional descriptions.</p>
             <h4>Technology Stack</h4>
             <ul>
                 <li><strong>Frontend:</strong> MS Excel,VBA</li>
@@ -164,16 +197,18 @@
         }
             </code></pre>
         </div>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         <div class="project">
             <h3>Raspberry Pi Document Server</h3>
-            <p>I set up a Raspberry Pi as a wireless access point, turning it into a portable document server. Users can access a document tree via QR codes, making it ideal for use in industrial settings where quick access to documentation is crucial.</p>
-            
+            <p>I set up a Raspberry Pi as a wireless access point, turning it into a portable document server. Users can
+                access a document tree via QR codes, making it ideal for use in industrial settings where quick access
+                to documentation is crucial.</p>
+
             <div class="media-section">
                 <h4>Application Demo</h4>
                 <video controls style="width: 50%; max-width: 400px;">
@@ -181,53 +216,71 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
-        
+
             <div class="media-section">
                 <h4>Schema</h4>
-                <img src="assets/schema.webp" alt="Schema" style="width: 100%; max-width: 800px;">
+                <img src="assets/dbSchema.webp" alt="Schema" style="width: 100%; max-width: 800px;">
             </div>
-            
-            <a href="https://github.com/yourusername/repo3">View Project on GitHub</a>
+
         </div>
-        
+
         <div class="project">
             <h3>VOIP Project</h3>
-            <p>Developed a VOIP intercom system using Asterisk PBX, integrating it with Omron PLCs and VoIP phones. Custom Python scripts were used to enhance the system’s functionality, allowing for seamless communication across the facility.</p>
+            <p>Developed a VOIP intercom system using Asterisk PBX, integrating it with Omron PLCs and VoIP phones.
+                Custom Python scripts were used to enhance the system’s functionality, allowing for seamless
+                communication across the facility.</p>
             <a href="https://github.com/yourusername/repo4">View Project on GitHub</a>
         </div>
         <div class="project">
             <h3>Video Visitation System</h3>
-            <p>I designed and implemented a video visitation system that integrates Omron PLCs, Axis media servers, and Indusoft HMI software. This system was developed to improve security and streamline operations in correctional facilities, providing reliable video communication between inmates and visitors.</p>
+            <p>I designed and implemented a video visitation system that integrates Omron PLCs, Axis media servers, and
+                Indusoft HMI software. This system was developed to improve security and streamline operations in
+                correctional facilities, providing reliable video communication between inmates and visitors.</p>
             <a href="https://github.com/yourusername/repo5">View Project on GitHub</a>
         </div>
         <div class="project">
             <h3>Microcontroller Firmware Development</h3>
-            <p>This project involved developing firmware for microcontrollers using Lonworks Neuron C. The firmware supports serial and I2C communication, enabling efficient data exchange between embedded devices in a distributed control system.</p>
+            <p>This project involved developing firmware for microcontrollers using Lonworks Neuron C. The firmware
+                supports serial and I2C communication, enabling efficient data exchange between embedded devices in a
+                distributed control system.</p>
             <a href="https://github.com/yourusername/repo6">View Project on GitHub</a>
         </div>
     </section>
     <div class="services">
         <h3>Professional Engineering and Automation Services</h3>
-        <p>Drawing from years of hands-on experience in industrial automation and project management, I offer a range of specialized services designed to enhance operational efficiency and system reliability:</p>
-        
+        <p>Drawing from years of hands-on experience in industrial automation and project management, I offer a range of
+            specialized services designed to enhance operational efficiency and system reliability:</p>
+
         <ul>
-            <li><strong>PLC Programming & System Integration:</strong> Expertise in designing and programming Allen Bradley PLC systems, integrating them with plant systems, and developing custom HMI applications.</li>
-            <li><strong>Industrial Automation Solutions:</strong> Providing tailored automation solutions, including distributed control software development, building automation, and complex system integration.</li>
-            <li><strong>Custom Software Development:</strong> Developing Node.js scripts and web applications for industrial use, focusing on real-time monitoring, data analysis, and system optimization.</li>
-            <li><strong>System Design & Project Management:</strong> Overseeing the design and implementation of digital and analog circuit boards, VOIP systems, and security solutions, ensuring timely and cost-effective project delivery.</li>
-            <li><strong>Consulting & Technical Support:</strong> Offering consulting services to optimize your industrial processes, improve compliance, and enhance system security through expert guidance and support.</li>
+            <li><strong>PLC Programming & System Integration:</strong> Expertise in designing and programming Allen
+                Bradley PLC systems, integrating them with plant systems, and developing custom HMI applications.</li>
+            <li><strong>Industrial Automation Solutions:</strong> Providing tailored automation solutions, including
+                distributed control software development, building automation, and complex system integration.</li>
+            <li><strong>Custom Software Development:</strong> Developing Node.js scripts and web applications for
+                industrial use, focusing on real-time monitoring, data analysis, and system optimization.</li>
+            <li><strong>System Design & Project Management:</strong> Overseeing the design and implementation of digital
+                and analog circuit boards, VOIP systems, and security solutions, ensuring timely and cost-effective
+                project delivery.</li>
+            <li><strong>Consulting & Technical Support:</strong> Offering consulting services to optimize your
+                industrial processes, improve compliance, and enhance system security through expert guidance and
+                support.</li>
         </ul>
-        
-        <p>Whether you're looking to optimize existing systems or develop new solutions, my services are tailored to meet your specific needs. <a href="#contact">Contact me</a> today to discuss how I can help your business thrive.</p>
+
+        <p>Whether you're looking to optimize existing systems or develop new solutions, my services are tailored to
+            meet your specific needs. <a href="#contact">Contact me</a> today to discuss how I can help your business
+            thrive.</p>
     </div>
-    
+
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
             <li><strong>Programming Languages:</strong> C, C++, Python, JavaScript, TypeScript, HTML, CSS</li>
-            <li><strong>Frameworks and Tools:</strong> Angular, Node.js, Express.js, MongoDB, Firebase, RSLogix, Indusoft Web Studio, Wonderware, Asterisk, Borland C++ Builder, Altium EDA</li>
-            <li><strong>Other Skills:</strong> Embedded firmware development, PLC programming, industrial communication protocols (Modbus, CAN, Lonworks, Ethernet/IP, DeviceNet, TCP/IP), software configuration management</li>
+            <li><strong>Frameworks and Tools:</strong> Angular, Node.js, Express.js, MongoDB, Firebase, RSLogix,
+                Indusoft Web Studio, Wonderware, Asterisk, Borland C++ Builder, Altium EDA</li>
+            <li><strong>Other Skills:</strong> Embedded firmware development, PLC programming, industrial communication
+                protocols (Modbus, CAN, Lonworks, Ethernet/IP, DeviceNet, TCP/IP), software configuration management
+            </li>
         </ul>
     </section>
 
@@ -236,7 +289,10 @@
         <h2>Professional Experience</h2>
         <div class="experience">
             <h3>Systems Engineer at Argos Cement (2015 - Present)</h3>
-            <p>At Argos Cement, I’ve been responsible for developing and programming Allen Bradley PLC systems using RSLogix 5000, 500, and 5. I’ve managed network equipment and servers, including VMware ESXI hosts and clients, and led various cost-saving and production improvement projects. My role also involved designing and implementing power monitoring systems using Node.js, Angular, and MongoDB.</p>
+            <p>At Argos Cement, I’ve been responsible for developing and programming Allen Bradley PLC systems using
+                RSLogix 5000, 500, and 5. I’ve managed network equipment and servers, including VMware ESXI hosts and
+                clients, and led various cost-saving and production improvement projects. My role also involved
+                designing and implementing power monitoring systems using Node.js, Angular, and MongoDB.</p>
             <ul>
                 <li>Developed a comprehensive power monitoring system.</li>
                 <li>Implemented a robust data collection and reporting framework.</li>
@@ -244,7 +300,9 @@
         </div>
         <div class="experience">
             <h3>Plant PLC/Manufacturing Programmer at U.S. Pipe and Foundry (2013 - 2015)</h3>
-            <p>In this role, I programmed and troubleshooted Allen Bradley PLCs and GE PLC equipment. I also developed HMI applications using InTouch Wonderware and FactoryTalk View, and managed the integration of plant systems with SQL Server Management Studio and Visual Basic.</p>
+            <p>In this role, I programmed and troubleshooted Allen Bradley PLCs and GE PLC equipment. I also developed
+                HMI applications using InTouch Wonderware and FactoryTalk View, and managed the integration of plant
+                systems with SQL Server Management Studio and Visual Basic.</p>
             <ul>
                 <li>Successfully integrated multiple plant systems, enhancing operational efficiency.</li>
                 <li>Led electrical projects and managed personnel during equipment installs and retrofits.</li>
@@ -252,7 +310,9 @@
         </div>
         <div class="experience">
             <h3>Project Engineer at Norment Security Group (2010 - 2013)</h3>
-            <p>As a Project Engineer, I designed and programmed building automation, intercommunication, and CCTV systems. I was also responsible for creating control system layouts and electrical connection diagrams using AutoCAD Electrical, and developing training materials for maintenance and troubleshooting.</p>
+            <p>As a Project Engineer, I designed and programmed building automation, intercommunication, and CCTV
+                systems. I was also responsible for creating control system layouts and electrical connection diagrams
+                using AutoCAD Electrical, and developing training materials for maintenance and troubleshooting.</p>
             <ul>
                 <li>Designed and implemented several critical security systems.</li>
                 <li>Developed training programs that improved on-site technical support.</li>
@@ -260,7 +320,9 @@
         </div>
         <div class="experience">
             <h3>Project Engineer at SimplexGrinnell (2009 - 2010)</h3>
-            <p>At SimplexGrinnell, I designed and implemented building automation and security systems. I supervised the installation and integration of complex electrical/electronic systems, utilizing tools like Indusoft HMI, Wonderware HMI, and Omron CX Programmer.</p>
+            <p>At SimplexGrinnell, I designed and implemented building automation and security systems. I supervised the
+                installation and integration of complex electrical/electronic systems, utilizing tools like Indusoft
+                HMI, Wonderware HMI, and Omron CX Programmer.</p>
             <ul>
                 <li>Successfully integrated multiple systems, ensuring seamless operation across facilities.</li>
                 <li>Led the implementation of advanced security measures.</li>
@@ -268,7 +330,9 @@
         </div>
         <div class="experience">
             <h3>Production / R&D Engineer at Trentech (Norment Security Group) (1997 - 2009)</h3>
-            <p>During my tenure at Trentech, I designed and developed over 24 digital and analog circuit boards for building automation systems. I also led the development of distributed control software for Lonworks network-based embedded devices, integrating these systems with Borland C++ Builder.</p>
+            <p>During my tenure at Trentech, I designed and developed over 24 digital and analog circuit boards for
+                building automation systems. I also led the development of distributed control software for Lonworks
+                network-based embedded devices, integrating these systems with Borland C++ Builder.</p>
             <ul>
                 <li>Spearheaded the development of a VOIP intercom system.</li>
                 <li>Designed and implemented a video visitation system for correctional facilities.</li>
@@ -294,14 +358,17 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you'd like to get in touch, please email me at <a href="mailto:danbrwn@gmail.com">danbrwn@gmail.com</a>.</p>
+        <p>If you'd like to get in touch, please email me at <a href="mailto:danbrwn@gmail.com">danbrwn@gmail.com</a>.
+        </p>
         <p><a href="https://www.linkedin.com/in/yourprofile/">Connect with me on LinkedIn</a></p>
     </section>
 
     <!-- Optional Blog/Articles Section -->
     <section id="blog">
         <h2>Blog/Articles</h2>
-        <p>In this section, I share my experiences and insights on embedded systems, PLC programming, and industrial automation. Check out my latest posts to learn more about my approach to solving complex engineering challenges.</p>
+        <p>In this section, I share my experiences and insights on embedded systems, PLC programming, and industrial
+            automation. Check out my latest posts to learn more about my approach to solving complex engineering
+            challenges.</p>
     </section>
 
     <!-- Resume Download Section -->
@@ -315,4 +382,5 @@
         <p>© 2024 Dan Brown. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
