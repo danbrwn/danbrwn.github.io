@@ -61,26 +61,64 @@
             <p><strong>Examples:</strong></p>
             <pre><code>
         // Example from ControlLogix PLC to Boolean Expressions
+        // Step 5: Ensure AND between tags like CommMatrix[5].RXDataBytes[0].3 CommMatrix[5].RXDataBytes[0].8
+        // This regex ensures there is an " AND " between such tags if they are adjacent without any separator.
         line = line.replace(/(\w+\[\d+\]\.\w+\[\d+\]\.\d+)\s+(?=\w+\[\d+\]\.\w+\[\d+\]\.\d+)/g, '$1 AND ');
         
         // Example from Boolean Expression to Natural Language Using OpenAI API
         const prompt = `Evaluate the following logical expression and provide a plain English explanation. 
-        Logical expression:${cleanedExpression}`;
+        Here are the definitions of the terms used:${mappingsString}
+        The expression includes tag names and descriptions separated by a '|' character. For example, 'R77M2|BAGHOUSE ID MOT COOL F1..MOK' means the tag name is 'R77M2' and the description is 'BAGHOUSE ID MOT COOL F1..MOK'.
+        Logical expression:${cleanedExpression}
+        Additionally, provide a textual flowchart with conditions and actions based on the logical expression. 
+        Each condition should be clearly defined and include the logical steps leading to the final action and retain the OR and AND keywords between steps.
+        Parentheses in the code should be evaluated as grouping statements for consideration as a whole.
+        Nested parentheses should indicate order of operations with inner most evaluated first.
+        Within enclosing parentheses AND conditions represents sequential actions and OR conditions branching conditions.
+        Conditions should be evaluated from left to right and inner parenthesis to outer parenthesis.
+        In evaluation order of operations OR represents a branching of logic and AND a joining condition.
+        Tag descriptions are designated with the following pattern tag|description where the | character is the delimiter.
+        Include the tag and descriptions in both the descriptive and flowchart outputs.
+        Plain English output should be designated as 'Plain English Explanation:'.
+        Flowchart output should be designated as 'Textual Flowchart:'.`;
         return prompt;
         
         // Example from Document Alarm Values ControlLogix PLC
         function extractAnalogAlarmDetails(content) {
             const regex = /(\w+)\s*:\s*(ANALOG|ANALOG_ALARM)\s*\(Description\s*:=\s*"([^"]*)"\)\s*:=\s*\[(.*?)\];/gs;
+            const matches = [...content.matchAll(regex)];
             const details = matches.map(match => {
                 const tag = match[1];
                 const type = match[2];
+                let description = match[3].replace(/\$N/g, ' '); // Replace $N with space
                 const values = match[4].split(',').map(v => v.trim());
-                // Additional processing...
+                
+                if (type === "ANALOG_ALARM" && values.length >= 16) {
+                    return {
+                        TAG: tag,
+                        Description: description,
+                        Hi_Hi: parseFloat(values[12]),
+                        Hi: parseFloat(values[13]),
+                        Lo_Lo: parseFloat(values[14]),
+                        Lo: parseFloat(values[15])
+                    };
+                } else if (type === "ANALOG" && values.length >= 16) {
+                    return {
+                        TAG: tag,
+                        Description: description,
+                        Hi_Hi: parseFloat(values[12]),
+                        Hi: parseFloat(values[13]),
+                        Lo_Lo: parseFloat(values[14]),
+                        Lo: parseFloat(values[15])
+                    };
+                }
+                return null;
             }).filter(detail => detail !== null);
             return details;
         }
             </code></pre>
         </div>
+        
         
         
         
