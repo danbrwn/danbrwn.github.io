@@ -26,21 +26,48 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project">
-            <h3>Discover ChangeFlow: Streamlining Change Management for Every Business</h3>
-            <p>Developed a comprehensive platform designed to simplify change management, making it easy to implement and track changes across various industries, from manufacturing to healthcare.</p>
-            <p><strong>Challenge:</strong> Businesses often struggle with managing change efficiently and ensuring compliance across various departments and operations.</p>
-            <p><strong>Solution:</strong> ChangeFlow offers features like automated workflows, real-time collaboration, and advanced reporting to enhance the management of change processes. It provides a secure and flexible platform that adapts to the unique needs of each organization.</p>
-            <p><strong>Outcome:</strong> ChangeFlow has empowered businesses to streamline their change management processes, reducing manual errors, boosting productivity, and ensuring compliance with industry standards.</p>
-            <p><strong>Key Features:</strong></p>
+            <h3>ChangeFlow - Streamlining Change Management</h3>
+            <p>ChangeFlow is a comprehensive platform designed to simplify and automate change management across various industries, enhancing efficiency and ensuring compliance. Ideal for industries like manufacturing, healthcare, and tech, ChangeFlow integrates seamlessly into your operations.</p>
+            
+            <h4>Features and Benefits</h4>
             <ul>
-                <li>Automated Change Management: Simplifies the change request process with automation.</li>
-                <li>Advanced Segmentation: Ensures only qualified experts can initiate changes.</li>
-                <li>Role-Specific Authorization: Controls who can request, approve, and implement changes.</li>
-                <li>Intuitive Interface: Simplifies the management of permissions and roles.</li>
-                <li>Email Notifications: Automates stakeholder updates at each workflow step.</li>
+                <li><strong>Automated Change Management:</strong> Automates change request processes, reducing manual errors.</li>
+                <li><strong>Advanced Segmentation:</strong> Uses cutting-edge technology to ensure only qualified experts can initiate changes, enhancing security and compliance.</li>
+                <li><strong>Role-Specific Authorization:</strong> Enables precise control over who can request, approve, and implement changes.</li>
+                <li><strong>Intuitive Interface:</strong> User-friendly design for managing permissions and authorizations.</li>
+                <li><strong>Customizable Detail Levels:</strong> Tailors management to specific facility areas.</li>
+                <li><strong>Email Notifications:</strong> Automates notifications to stakeholders at each workflow step.</li>
             </ul>
-            <p><strong>Website:</strong> <a href="https://changeflow.ind-docs.app">https://changeflow.ind-docs.app</a></p>
+            
+            <h4>Visual Overview</h4>
+            <div class="video-container" style="position: relative;">
+                <!-- Preload Video -->
+                <video muted autoplay loop playsinline preload="auto"
+                       style="width: 100%; display: block; cursor:pointer;" 
+                       (click)="loadVideo()" *ngIf="!videoLoaded">
+                    <source src="/assets/placeholder_720_h264.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay" *ngIf="!videoLoaded" (click)="loadVideo()">
+                    Click to Load Full Video
+                </div>
+                <!-- Full Video -->
+                <video controls *ngIf="videoLoaded" preload="auto" style="width: 100%; display: block;">
+                    <source src="https://your-firebase-video-url.com/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <h4>Additional Information</h4>
+            <p>For more details, explore the <a href="https://changeflow.ind-docs.app" target="_blank">ChangeFlow website</a> or sign up for a <a href="https://changeflow.ind-docs.app/trial" target="_blank">free trial</a> to experience how ChangeFlow can transform your change management processes.</p>
+            
+            <div class="banner">
+                <img src="assets/Firebase Hosting Light.png" alt="Firebase Hosting">
+                <img src="assets/Firebase Authentication Light.png" alt="Firebase Authentication">
+                <img src="assets/Cloud Firestore Light.png" alt="Firebase Storage">
+            </div>
         </div>
+        
         
         
         <div class="project">
