@@ -159,19 +159,20 @@ section {
 }
 
 .images figure {
-    margin: 10px;
-    flex-basis: 48%;
+    margin: 10px 0; /* Aligns with the spacing used in other sections */
+    flex-basis: 100%; /* Ensures the figure takes up the full width of the column */
     text-align: center;
 }
 
 .images img {
-    max-width: 100%;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Image takes full width of the column */
+    max-width: 100%; /* Ensures images do not exceed the width of their container */
+    border-radius: 5px; /* Keeps the rounded corners consistent with other elements */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adds a light shadow for depth */
 }
 
 .images figcaption {
     margin-top: 10px;
     font-size: 14px;
-    color: #555;
+    color: #555; /* Keeps the caption style consistent */
 }
