@@ -44,86 +44,44 @@
         
         
         <div class="project">
-            <h3>ControlLogix PLC to Boolean Expressions</h3>
-            <p>Developed an application to parse ControlLogix L5K export programs into boolean equivalent statements.</p>
-            <p><strong>Challenge:</strong> Functional descriptions of operations needed updating after 15 years of changes. Users could not evaluate PLC rungs. Going through PLC rung by rung for approximately 50 PLCs would have been extremely time-consuming.</p>
-            <p><strong>Solution:</strong> I wrote a Node.js application to parse strings using complex regular expressions, converting ControlLogix statements into boolean expressions.</p>
-            <p><strong>Outcome:</strong> The code allowed validation of the functions against the PLC code, providing the end-user with understandable boolean expressions for complex PLC code.</p>
-            <p><strong>Example:</strong></p>
-            <pre>
-        // Step 5: Ensure AND between tags like CommMatrix[5].RXDataBytes[0].3 CommMatrix[5].RXDataBytes[0].8
-        // This regex ensures there is an " AND " between such tags if they are adjacent without any separator.
-        line = line.replace(/(\w+\[\d+\]\.\w+\[\d+\]\.\d+)\s+(?=\w+\[\d+\]\.\w+\[\d+\]\.\d+)/g, '$1 AND ');
-            </pre>
-        </div>
-        <div class="project">
-            <h3>Boolean Expression to Natural Language Using OpenAI API</h3>
-            <p>Developed a Node.js script to translate boolean language statements into a natural language synopsis of operations.</p>
-            <p><strong>Challenge:</strong> Provide a more comprehensive explanation of boolean logic to better explain operations.</p>
-            <p><strong>Solution:</strong> I wrote a program to interface with the OpenAI API and trained the model to produce accurate results. I developed prompts tailored to generate natural language explanations corresponding to PLC code rungs from ControlLogix PLC.</p>
-            <p><strong>Outcome:</strong> The code performed well, but it was ultimately decided that the target audience was sufficiently supported by the original boolean conversion.</p>
-            <p><strong>Example:</strong></p>
-            <pre>
-        const prompt = `Evaluate the following logical expression and provide a plain English explanation. 
-        Here are the definitions of the terms used:${mappingsString}
-        The expression includes tag names and descriptions separated by a '|' character. For example, 'R77M2|BAGHOUSE ID MOT COOL F1..MOK' means the tag name is 'R77M2' and the description is 'BAGHOUSE ID MOT COOL F1..MOK'.
-        Logical expression:${cleanedExpression}
-        Additionally, provide a textual flowchart with conditions and actions based on the logical expression. 
-        Each condition should be clearly defined and include the logical steps leading to the final action and retain the OR and AND keywords between steps.
-        Parentheses in the code should be evaluated as grouping statements for consideration as a whole.
-        Nested parentheses should indicate order of operations with inner most evaluated first.
-        Within enclosing parentheses AND conditions represents sequential actions and OR conditions branching conditions.
-        Conditions should be evaluated from left to right and inner parenthesis to outer parenthesis.
-        In evaluation order of operations OR represents a branching of logic and AND a joining condition.
-        Tag descriptions are designated with the following pattern tag|description where the | character is the delimiter.
-        Include the tag and descriptions in both the descriptive and flowchart outputs.
-        Plain English output should be designated as 'Plain English Explanation:'.
-        Flowchart output should be designated as 'Textual Flowchart:'.`;
-        return prompt;
-            </pre>
-        </div>
-        <div class="project">
-            <h3>Document Alarm Values ControlLogix PLC</h3>
-            <p>Developed a Node.js script to extract all digital and analog alarm block parameters from a ControlLogix exported file.</p>
-            <p><strong>Challenge:</strong> Documenting current PLC alarm settings for a large set of alarms and PLCs, and validating these settings against best practices.</p>
-            <p><strong>Solution:</strong> I wrote a Node.js script to parse alarm structures and extract settings from ControlLogix L5K exported programs.</p>
-            <p><strong>Outcome:</strong> I was able to efficiently retrieve data for all alarms, making it easy to document and validate the alarm levels.</p>
-            <p><strong>Example:</strong></p>
+            <h3>Documenting ControlLogix PLC Functional Descriptions</h3>
+            <p>Developed a series of Node.js scripts to document and validate ControlLogix PLC functional descriptions, translating complex PLC logic into understandable formats.</p>
+            
+            <p><strong>Challenge:</strong> Updating functional descriptions after 15 years of changes across approximately 50 PLCs, and validating settings against best practices, all while making the information comprehensible for users who cannot evaluate PLC rungs directly.</p>
+            
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li><strong>ControlLogix PLC to Boolean Expressions:</strong> Wrote a Node.js script to parse ControlLogix L5K export programs into boolean equivalent statements, using complex regular expressions.</li>
+                <li><strong>Boolean Expression to Natural Language Using OpenAI API:</strong> Developed a Node.js script to translate boolean language statements into a natural language synopsis, providing a comprehensive explanation of operations.</li>
+                <li><strong>Document Alarm Values ControlLogix PLC:</strong> Created a Node.js script to extract digital and analog alarm block parameters from ControlLogix exported files, simplifying the documentation and validation process for a large set of alarms.</li>
+            </ul>
+            
+            <p><strong>Outcome:</strong> The combined efforts allowed for accurate documentation, validation, and explanation of complex PLC code, making it accessible and understandable for end users. This streamlined the process of updating and validating the PLC functional descriptions.</p>
+            
+            <p><strong>Examples:</strong></p>
             <pre><code>
+        // Example from ControlLogix PLC to Boolean Expressions
+        line = line.replace(/(\w+\[\d+\]\.\w+\[\d+\]\.\d+)\s+(?=\w+\[\d+\]\.\w+\[\d+\]\.\d+)/g, '$1 AND ');
+        
+        // Example from Boolean Expression to Natural Language Using OpenAI API
+        const prompt = `Evaluate the following logical expression and provide a plain English explanation. 
+        Logical expression:${cleanedExpression}`;
+        return prompt;
+        
+        // Example from Document Alarm Values ControlLogix PLC
         function extractAnalogAlarmDetails(content) {
             const regex = /(\w+)\s*:\s*(ANALOG|ANALOG_ALARM)\s*\(Description\s*:=\s*"([^"]*)"\)\s*:=\s*\[(.*?)\];/gs;
-            const matches = [...content.matchAll(regex)];
             const details = matches.map(match => {
                 const tag = match[1];
                 const type = match[2];
-                let description = match[3].replace(/\$N/g, ' '); // Replace $N with space
                 const values = match[4].split(',').map(v => v.trim());
-                
-                if (type === "ANALOG_ALARM" && values.length >= 16) {
-                    return {
-                        TAG: tag,
-                        Description: description,
-                        Hi_Hi: parseFloat(values[12]),
-                        Hi: parseFloat(values[13]),
-                        Lo_Lo: parseFloat(values[14]),
-                        Lo: parseFloat(values[15])
-                    };
-                } else if (type === "ANALOG" && values.length >= 16) {
-                    return {
-                        TAG: tag,
-                        Description: description,
-                        Hi_Hi: parseFloat(values[12]),
-                        Hi: parseFloat(values[13]),
-                        Lo_Lo: parseFloat(values[14]),
-                        Lo: parseFloat(values[15])
-                    };
-                }
-                return null;
+                // Additional processing...
             }).filter(detail => detail !== null);
             return details;
         }
             </code></pre>
         </div>
+        
         
         
         <div class="project">
