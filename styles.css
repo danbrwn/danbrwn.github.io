@@ -103,3 +103,24 @@ code {
     font-size: 14px; /* Font size for code */
 }
 
+/* Service section styling */
+.services {
+    background-color: #ffffff; /* Matches the 'about' section */
+    padding: 40px 20px; /* Consistent with other sections */
+    margin: 20px auto; /* Similar spacing as other sections */
+    border-radius: 5px; /* Adds subtle rounding to the section edges */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+}
+
+.services h3 {
+    color: #2a2a2a; /* Ensures the service title matches other headers */
+}
+
+.services ul {
+    list-style-type: disc; /* Adds disc bullets to the list */
+    padding-left: 40px; /* Indentation for bullets */
+}
+
+.services ul li {
+    margin-bottom: 10px; /* Adds spacing between list items */
+}
