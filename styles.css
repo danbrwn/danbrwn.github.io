@@ -134,18 +134,22 @@ footer {
 }
 /* Code block styling */
 pre {
-    white-space: pre-wrap; /* This ensures long lines break and wrap within the container */
-    word-wrap: break-word; /* Prevents words from overflowing */
-    background-color: #f4f4f4; /* Light grey background for code blocks */
-    padding: 10px; /* Padding around the code block */
-    border-radius: 5px; /* Rounded corners */
-    overflow-x: auto; /* Adds horizontal scrollbar if needed */
+    background-color: #2e2e2e; /* Dark background for the code block */
+    color: #f1f1f1; /* Light text color for readability */
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+    overflow-x: auto; /* Enables horizontal scrolling if necessary */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow for a subtle effect */
+    margin: 0; /* Ensures no extra margin around the code block */
 }
 
 code {
-    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
-    font-size: 14px; /* Font size for code */
+    color: inherit; /* Inherit text color from the <pre> element */
+    background: none; /* Remove any default background color */
+    white-space: pre-wrap; /* Allows wrapping of code for better visibility */
 }
+
 
 /* Section styling - consistent with the rest */
 section {
