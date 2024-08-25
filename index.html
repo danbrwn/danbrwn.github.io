@@ -27,11 +27,20 @@
             <p>ChangeFlow is a comprehensive platform designed to simplify and automate change management across various
                 industries, enhancing efficiency and ensuring compliance. Ideal for industries like manufacturing,
                 healthcare, and tech, ChangeFlow integrates seamlessly into your operations.</p>
-
+            <p><strong>Challenge:</strong> Request for change is typcially handled in a cumbersome way.
+                This usually involves a paper document carried from person to person for approval or in many cases there are no provsions in place for everyday changes.
+                Tracking becomes difficult and the history is pratically imposssible to search through.
+            </p>
+            <p><strong>Solution:</strong>
+            Changeflow Software </p>
             <h4>Features and Benefits</h4>
             <ul>
                 <li><strong>Automated Change Management:</strong> Automates change request processes, reducing manual
-                    errors.</li>
+                    errors, providing easy access and lightning fast approval process.</li>
+                <li><strong>Permanent, Temporary and Urgent request</strong>
+                    Users can request Permanent as well as temporary changes. Initiators of temporary changes will be reminded on the date and time of removal with a removal
+                    notice. Urgent requests will have additional push notifications and SMS (text) sent for to those users who opt in to these services.
+                </li>
                 <li><strong>Advanced Segmentation:</strong> Uses cutting-edge technology to ensure only qualified
                     experts can initiate changes, enhancing security and compliance.</li>
                 <li><strong>Role-Specific Authorization:</strong> Enables precise control over who can request, approve,
@@ -72,7 +81,15 @@
                 front-end is built with Angular and Material Design, offering a user-friendly interface for monitoring
                 power usage. The system stores data in the cloud for easy access and reporting, providing critical
                 insights into energy consumption.</p>
-
+            <p><strong>Challenge:</strong> 
+                Obsolete power monitoring application needed to be updated. No vendor supplied solution existed.
+                 System used combination of Kepware supplied data and native reads of some devices. Old system relied on two versions of Kepware as some of the meters were not supprted in newest Kepware software.
+                 Reports were not tailored to the specific needs of the facility.
+            </p>
+            <p><strong>Solution:</strong> 
+               I wrote and application that pulled the data from the meters in the field using a combination of CIP and Modbus protocols. Some of the data for the new calculations (specific power consumptions) only existed 
+               on the company website, so i wrote a web scraper component to scrup that data for inclusion in the reports.
+            </p>
             <h4>Technology Stack</h4>
             <ul>
                 <li><strong>Frontend:</strong> Angular, Material Design, Typescript</li>
@@ -126,7 +143,7 @@
             <p><strong>Example Code:</strong></p>
             <pre><code>
         // Example from ControlLogix PLC to Boolean Expressions
-        // Step 5: Ensure AND between tags like CommMatrix[5].RXDataBytes[0].3 CommMatrix[5].RXDataBytes[0].8
+       
         // This regex ensures there is an " AND " between such tags if they are adjacent without any separator.
         line = line.replace(/(\w+\[\d+\]\.\w+\[\d+\]\.\d+)\s+(?=\w+\[\d+\]\.\w+\[\d+\]\.\d+)/g, '$1 AND ');
         
@@ -156,29 +173,7 @@
                 const tag = match[1];
                 const type = match[2];
                 let description = match[3].replace(/\$N/g, ' '); // Replace $N with space
-                const values = match[4].split(',').map(v => v.trim());
-                
-                if (type === "ANALOG_ALARM" && values.length >= 16) {
-                    return {
-                        TAG: tag,
-                        Description: description,
-                        Hi_Hi: parseFloat(values[12]),
-                        Hi: parseFloat(values[13]),
-                        Lo_Lo: parseFloat(values[14]),
-                        Lo: parseFloat(values[15])
-                    };
-                } else if (type === "ANALOG" && values.length >= 16) {
-                    return {
-                        TAG: tag,
-                        Description: description,
-                        Hi_Hi: parseFloat(values[12]),
-                        Hi: parseFloat(values[13]),
-                        Lo_Lo: parseFloat(values[14]),
-                        Lo: parseFloat(values[15])
-                    };
-                }
-                return null;
-            }).filter(detail => detail !== null);
+               ...
             return details;
         }
             </code></pre>
@@ -191,9 +186,10 @@
 
         <div class="project">
             <h3>Raspberry Pi Document Server</h3>
-            <p>I set up a Raspberry Pi as a wireless access point, turning it into a portable document server. Users can
-                access a document tree via QR codes, making it ideal for use in industrial settings where quick access
-                to documentation is crucial.</p>
+            <p>Raspberry Pi wireless access point and web server to provide field documentation of electrical rooms, equipment, training videos and other documents.
+             Users can create, update, read and delete documents and other files in the field and provide an updatable library of documents where they need it most.
+             System provides role specific access and rights.
+            </p>
             <h4>Technology Stack</h4>
             <ul>
                 <li><strong>Frontend:</strong> EJS (Embedded JavaScript) for templating with Express EJS Layouts for
