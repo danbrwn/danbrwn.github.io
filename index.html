@@ -23,10 +23,10 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project">
-            <h3>ChangeFlow - Streamlining Change Management</h3>
-            <p>ChangeFlow is a comprehensive platform designed to simplify and automate change management across various
+            <h3>Changeflow - Streamlining Change Management</h3>
+            <p>Changeflow is a comprehensive platform designed to simplify and automate change management across various
                 industries, enhancing efficiency and ensuring compliance. Ideal for industries like manufacturing,
-                healthcare, and tech, ChangeFlow integrates seamlessly into your operations.</p>
+                healthcare, and tech, Changeflow integrates seamlessly into your operations.</p>
             <p><strong>Challenge:</strong> Request for change is typically handled in a cumbersome way.
                 This usually involves a paper document carried from person to person for approval or in many cases there are no provisions in place for everyday changes.
                 Tracking becomes difficult and the history is practically impossible to search through.
@@ -70,9 +70,9 @@
             </div>
 
             <h4>Additional Information</h4>
-            <p>For more details, explore the <a href="https://changeflow.ind-docs.app" target="_blank">ChangeFlow
+            <p>For more details, explore the <a href="https://changeflow.ind-docs.app" target="_blank">Changeflow
                     website</a> or sign up for a <a href="https://changeflow.ind-docs.app/trial" target="_blank">free
-                    trial</a> to experience how ChangeFlow can transform your change management processes.</p>
+                    trial</a> to experience how Changeflow can transform your change management processes.</p>
         </div>
 
         <div class="project">
@@ -252,8 +252,43 @@
            
         </div>
 
+        <section id="distributed-control">
+            <h2>Distributed Control Programming Environment</h2>
+            <p>The distributed programming environment is built around a network of LonWorks microcontroller nodes connected via a twisted pair network. These nodes form the backbone of a building control network, commonly deployed in environments such as correctional facilities and courthouses. Each node within this system is equipped to monitor inputs and control outputs, facilitating automated tasks such as monitoring door positions, controlling door mechanisms, and managing intercom connections.</p>
+            
+            <h3>Drag-and-Drop Programming Interface</h3>
+            <p>The software developed for this system offers a drag-and-drop programming interface, enabling intuitive and efficient programming of the distributed nodes. Users can place icons representing inputs, outputs, and actions within a hierarchical tree structure. This tree structure directly maps to the input and output conditions available in the firmware of the nodes. By dropping an input or output state onto the tree, the system automatically generates the corresponding code and inserts it into the node’s descriptor table.</p>
+            
+            <h3>Distributed Stack-Based Machine</h3>
+            <p>Each node in the network operates as a stack-based machine. The programming environment compiles the tree structure into a series of instructions, with each node's descriptor table containing 10-byte descriptors. These descriptors serve as stack entries, holding all the information needed to evaluate and execute instructions. The descriptors are distributed across multiple nodes, enabling decentralized control and coordination within the network.</p>
+            
+            <h3>Execution and Control</h3>
+            <p>When executed, the code on each node processes its descriptors sequentially. Each descriptor not only carries the operation to be performed but also the location of the next instruction. This setup allows the distributed nodes to work collaboratively, executing a sequence of operations that span across the network, thereby achieving distributed control.</p>
+            
+            <p>This design enables scalable and robust automation, particularly in environments that require the coordination of multiple control points across a large area. By leveraging the drag-and-drop interface, even complex control sequences can be programmed efficiently, ensuring that the system can adapt to a wide range of control tasks with minimal manual coding.</p>
+            <div class="media-section">
+                <h4>Programming Environment</h4>
+                <img src="assets/ioLogix.webp" alt="Programming Environment" style="width: 50%; max-width: 400px;">
+            </div>
+            <div class="media-section">
+                <h4>Documentation </h4>
+                <img src="assets/ioLogixHelp.webp" alt="voipphone" style="width: 50%; max-width: 400px;">
+            </div>
+            <h4>Technology Stack</h4>
+            <ul>
+                <li><strong>Frontend:</strong> Custom application using Borland C++ Builder with drag-and-drop
+                    interface.</li>
+                <li><strong>Backend:</strong> Neuron C for firmware development, stack-based machine implementation.
+                </li>
+                <li><strong>Networking:</strong> Distributed Lonworks microcontroller nodes.</li>
+                <li><strong>Additional Tools:</strong> Borland Database Engine for managing descriptor tables and state
+                    information.</li>
+            </ul>
+        </section>
+        
 
-        <div class="project">
+
+        <!-- <div class="project">
             <h3>Distributed Programming Environment</h3>
             <p>Designed and developed a distributed programming environment for building automation, allowing for
                 decentralized control over various devices using Lonworks technology.</p>
@@ -276,7 +311,7 @@
                     information.</li>
             </ul>
            
-        </div>
+        </div> -->
 
 
        
