@@ -45,6 +45,50 @@ section {
 #projects {
     background-color: #f0f0f0;
 }
+.project {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-light {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.project-dark {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+.project-dark h3,
+.project-dark h4 {
+    color: #f1c40f; /* Accent color for headings */
+}
+
+.project-dark img {
+    border: 2px solid #f1c40f; /* Border for images */
+}
+
+.project-light h3,
+.project-light h4 {
+    color: #2c3e50; /* Accent color for headings */
+}
+
+.project-light img {
+    border: 2px solid #2c3e50; /* Border for images */
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
 
 #skills {
     background-color: #ffffff;
