@@ -100,11 +100,11 @@
             </ul>
             <div class="images">
                 <figure>
-                    <img src="assets/PMSpc.webp" alt="Specific Power Consumption" style="width:100%; max-width:800px;">
+                    <img src="assets/PMSpc.webp" alt="Specific Power Consumption" style="width:100%; max-width:800px;" onclick="openLightbox(this.src)">
                     <figcaption>Specific Power Consumption</figcaption>
                 </figure>
                 <figure>
-                    <img src="assets/PMMeters.webp" alt="Meters" style="width:100%; max-width:800px;">
+                    <img src="assets/PMMeters.webp" alt="Meters" style="width:100%; max-width:800px;" onclick="openLightbox(this.src)">
                     <figcaption>Meters</figcaption>
                 </figure>
             </div>
@@ -219,7 +219,7 @@
 
             <div class="media-section">
                 <h4>Schema</h4>
-                <img src="assets/dbSchema.webp" alt="Schema" style="width: 50%; max-width: 400px;">
+                <img src="assets/dbSchema.webp" alt="Schema" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
             </div>
 
         </div>
@@ -232,15 +232,15 @@
                 correctional facilities, providing reliable video communication between inmates and visitors.</p>
                 <div class="media-section">
                     <h4>Visit Setup Matrix</h4>
-                    <img src="assets/matrix.webp" alt="voipphone" style="width: 50%; max-width: 400px;">
+                    <img src="assets/matrix.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
                 </div>
                 <div class="media-section">
                     <h4>Visit Schedule</h4>
-                    <img src="assets/schedule.webp" alt="voipphone" style="width: 50%; max-width: 400px;">
+                    <img src="assets/schedule.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
                 </div>
                 <div class="media-section">
                     <h4>Video Conference</h4>
-                    <img src="assets/cam.webp" alt="voipphone" style="width: 50%; max-width: 400px;">
+                    <img src="assets/cam.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
                 </div>
             <h4>Technology Stack</h4>
             <ul>
@@ -268,11 +268,11 @@
             <p>This design enables scalable and robust automation, particularly in environments that require the coordination of multiple control points across a large area. By leveraging the drag-and-drop interface, even complex control sequences can be programmed efficiently, ensuring that the system can adapt to a wide range of control tasks with minimal manual coding.</p>
             <div class="media-section">
                 <h4>Programming Environment</h4>
-                <img src="assets/ioLogix.webp" alt="Programming Environment" style="width: 50%; max-width: 400px;">
+                <img src="assets/ioLogix.webp" alt="Programming Environment" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
             </div>
             <div class="media-section">
                 <h4>Documentation </h4>
-                <img src="assets/ioLogixHelp.webp" alt="voipphone" style="width: 50%; max-width: 400px;">
+                <img src="assets/ioLogixHelp.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
             </div>
             <h4>Technology Stack</h4>
             <ul>
@@ -322,7 +322,7 @@
             layer 3 switches, CCTV equipment, and PLC intercom, lighting and locking systems.</p>
             <div class="media-section">
                 <h4>Device Screen</h4>
-                <img src="assets/voipphone.webp" alt="voipphone" style="width: 50%; max-width: 400px;">
+                <img src="assets/voipphone.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
             </div>
         <h4>Technology Stack</h4>
         <ul>
@@ -489,6 +489,12 @@
     <footer>
         <p>© 2024 Dan Brown. All rights reserved.</p>
     </footer>
+    <!-- Lightbox Container -->
+<div id="lightbox" style="display:none;">
+    <span id="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged Image">
+</div>
+<script src="script.js"></script>
 </body>
 
 </html>
