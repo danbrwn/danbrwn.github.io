@@ -4,113 +4,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dan Brown - Industrial Systems and Software Engineer</title>
+    <title>Dan Brown - Software, Systems & Embedded Engineer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <!-- Home/Introduction Section -->
     <header>
-        <h1 style="color:#FFD700">Dan Brown - Industrial Systems and Software Engineer</h1>
-        <p>Welcome to my portfolio! With over three decades of experience in industrial systems and software engineering, I specialize in integrating robust software solutions into complex industrial environments. My expertise covers PLC programming, embedded systems, and large-scale software development. I am passionate about leveraging cutting-edge technology to create efficient, reliable, and scalable systems that drive innovation, enhance operational excellence, and meet the demanding needs of modern industry.</p>
+        <h1 style="color:#FFD700">Dan Brown - Software, Systems &amp; Embedded Engineer</h1>
+        <p>I build complete real-world systems that span embedded firmware, industrial controls, networking, backend
+            services, and modern web applications. My work is focused on reliability, usability, and deployment in
+            demanding environments.</p>
+
+        <p>I combine deep experience in microcontroller-based systems, distributed control networks, and industrial
+            automation with modern full-stack development. I design and deliver entire solutions: hardware integration,
+            firmware, communication layers, user interfaces, backend services, and deployment platforms.</p>
+
+
+        <p>
+            Featured products include <strong>Libraforge™</strong>, an offline-first industrial knowledge, files, and forms platform for edge deployment, and <strong>ChangeFlow™</strong>, a workflow and approval platform for controlled operational change.
+        </p>
+        <p>
+            <a href="#projects">View Projects</a> |
+            <a href="#skills">View Skills</a> |
+            <a href="#contact">Contact Me</a>
+        </p>
     </header>
-    
+    <section id="summary">
+        <h2>Full-Stack Product & Systems Development</h2>
+        <p>I specialize in building software that people actually use: configurable workflow systems, operational tools,
+            internal platforms, role-based applications, and edge-hosted web systems. My strongest work centers on
+            turning messy real-world processes into usable products with clear interfaces, reliable backend logic, and
+            practical deployment models.</p>
+    </section>
+
 
     <!-- About Me Section -->
-    
+
+    <section id="what-i-build">
+        <h2>What I Build</h2>
+        <ul>
+            <li><strong>Full-stack web applications:</strong> interfaces, backend services, APIs, authentication, and
+                database design.</li>
+            <li><strong>Workflow platforms:</strong> approvals, state transitions, notifications, auditability, and
+                role-based routing.</li>
+            <li><strong>Operational software:</strong> search, forms, content delivery, administrative controls, and
+                internal tools.</li>
+            <li><strong>Edge-hosted systems:</strong> offline-first and locally deployed applications for environments
+                where reliability and locality matter.</li>
+        </ul>
+    </section>
+    <section id="products">
+        <h2>Live Products & Platforms</h2>
+        <p>These are production systems I have designed, built, and deployed.</p>
+
+        <ul>
+            <li>
+                <strong>Libraforge™:</strong>
+                <a href="https://libraforge.com/" target="_blank">Product Overview</a> |
+                <a href="https://youtu.be/LntkbVGL3rI" target="_blank">Demo Video</a>
+            </li>
+
+            <li>
+                <strong>ChangeFlow™:</strong>
+                <a href="https://changeflow.ind-docs.app" target="_blank">Live Application</a>
+            </li>
+        </ul>
+    </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>Projects</h2>
-        <div class="project project-dark">
-            <h3>Changeflow - Streamlining Change Management</h3>
-            <p>Changeflow is a comprehensive platform designed to simplify and automate change management across various
-                industries, enhancing efficiency and ensuring compliance. Ideal for industries like manufacturing,
-                healthcare, and tech, Changeflow integrates seamlessly into your operations.</p>
-            <p><strong>Challenge:</strong> Request for change is typically handled in a cumbersome way.
-                This usually involves a paper document carried from person to person for approval or in many cases there are no provisions in place for everyday changes.
-                Tracking becomes difficult and the history is practically impossible to search through.
+        <h2>Featured Products & Engineering Projects</h2>
+        <p>These projects represent my strongest product-focused, full-stack work.</p>
+        <div class="project project-light">
+            <h3>Libraforge™ - Offline-First Industrial Knowledge, Files & Forms Platform</h3>
+            <p><strong>Challenge:</strong>
+                Finding drawings and other user documents for specific machinery or equipment rooms is costly and
+                inefficient in most facilities.
+                Documents are often illegible or missing. Users manuals and technical documents are often unavailable in
+                the field and must be sought, often times with loss of critical time.
+                Paper documents may be accessed by unqualified users.
             </p>
-            <p><strong>Solution:</strong>
-            Changeflow Software </p>
-            <h4>Features and Benefits</h4>
+            <p><strong>Solution:</strong> Libraforge™ is an offline-first industrial file, forms, and knowledge platform
+                that places critical files, procedures, forms, videos, notes, and work instructions directly at the
+                point of use. It gives supervisors and administrators control over access, organization, search,
+                compliance workflows, and updates while making documentation easy to consume from mobile devices in the
+                field.</p>
+
+            <p>The platform is designed for deployment on compact edge hardware such as Raspberry Pi devices, where it
+                can operate as a local web server and wireless access point. This allows teams to access equipment
+                documentation, complete forms, capture field information, search notes, tag files, and manage role-based
+                content even when cloud connectivity is limited, undesirable, or completely unavailable.</p>
+
+            <p><strong>Full-Stack Scope:</strong> platform architecture, server-side rendering, user and role
+                management, file delivery, search and metadata systems, note capture, form design and publishing
+                workflows, PDF generation, local deployment, HTTPS support, and offline-first operation.</p>
+            <p><strong>What Makes It Distinct:</strong> Libraforge™ is more than a file browser. It combines secure
+                document delivery, department and role-based access control, built-in search, LibraNotes knowledge
+                capture, LibraTags metadata, schema-driven forms, versioned publishing, signed PDF outputs, local
+                branding, HTTPS certificate management, backup workflows, and edge deployment into a single
+                appliance-style platform.</p>
+
+            <h4>Key Product Capabilities</h4>
             <ul>
-                <li><strong>Automated Change Management:</strong> Automates change request processes, reducing manual
-                    errors, providing easy access and lightning fast approval process.</li>
-                <li><strong>Permanent, Temporary and Urgent requests</strong>
-                    Users can request Permanent as well as temporary changes. Initiators of temporary changes will be reminded on the date and time of removal with a removal
-                    notice. Urgent requests will have additional push notifications and SMS (text) sent to those users who opt in to these services.
-                </li>
-                <li><strong>Advanced Segmentation:</strong> Uses cutting-edge technology to ensure only qualified
-                    experts can initiate changes, enhancing security and compliance.</li>
-                <li><strong>Role-Specific Authorization:</strong> Enables precise control over who can request, approve,
-                    and implement changes.</li>
-                <li><strong>Intuitive Interface:</strong> User-friendly design for managing permissions and
-                    authorizations.</li>
-                <li><strong>Customizable Detail Levels:</strong> Tailors management to specific facility areas.</li>
-                <li><strong>Email Notifications:</strong> Automates notifications to stakeholders at each workflow step.
-                </li>
-                <li><strong>Optional SMS/Push Notifications:</strong> Users can opt in for urgent change notifications.
+                <li><strong>Controlled document delivery:</strong> role-based access to files, folders, departments, and
+                    archive downloads for operational documentation in the field.</li>
+                <li><strong>Knowledge system:</strong> LibraNotes™, LibraSearch™, and LibraTags™ turn the file structure
+                    into a searchable operational knowledge base.</li>
+                <li><strong>Compliance-ready forms:</strong> schema-based form builder, publishing workflow, version
+                    tracking, cryptographic schema hashes, and signed PDF submissions.</li>
+                <li><strong>Edge deployment:</strong> runs locally on compact hardware with offline-first access, local
+                    Wi-Fi access point support, and optional wired Ethernet deployment.</li>
+                <li><strong>Security and IT fit:</strong> HTTPS support, device certificates, optional Root CA trust
+                    model, workspace branding, SMTP notifications, and managed backups.</li>
+            </ul>
+
             <h4>Technology Stack</h4>
             <ul>
-                <li><strong>Frontend:</strong> Angular, Bootstrap, Typescript</li>
-                <li><strong>Backend:</strong> Node.js, Firebase, Firebase Functions, Express.js</li>
-                <li><strong>Database:</strong> Cloud Firestore</li>
-                <li><strong>Hosting:</strong> Firebase Hosting</li>
+                <li><strong>Frontend:</strong> EJS templating, responsive HTML/CSS/JavaScript, and server-rendered
+                    operational interfaces optimized for mobile and plant-floor use.</li>
+                <li><strong>Backend:</strong> Node.js and Express with middleware-driven request handling,
+                    authentication, uploads, optimization pipelines, and appliance-style local hosting.</li>
+                <li><strong>Data and Storage:</strong> SQLite for users, roles, departments, settings, and platform
+                    metadata, plus structured filesystem-based content organization for documents, notes, forms, and
+                    completed records.</li>
+                <li><strong>Forms Engine:</strong> visual form builder, versioned publishing, Excel template import,
+                    direct schema import, PDF master generation, technician submissions, and signed PDF output with
+                    verification hashes.</li>
+                <li><strong>Search and Metadata:</strong> context-aware search across file names, notes, form titles,
+                    task names, tags, and metadata using LibraNotes and LibraTags.</li>
+                <li><strong>Platform Features:</strong> image optimization, video transcoding to H.264 MP4, SMTP
+                    notifications, HTTPS certificates, local CA support, AP and Ethernet configuration, USB snapshot
+                    backups, and workspace branding.</li>
             </ul>
+            <div class="media-section">
+                <h4>Live Demo</h4>
+
+                <div style="margin-top: 10px;">
+                    <iframe width="100%" height="315"
+                        src="https://www.youtube.com/embed/LntkbVGL3rI?autoplay=1&mute=1&loop=1&playlist=LntkbVGL3rI"
+                        title="Libraforge Demo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <p>
+                    <a href="https://youtu.be/LntkbVGL3rI" target="_blank">
+                        ▶ Watch on YouTube
+                    </a>
+                </p>
+                <p>
+                    <a href="https://libraforge.com/" target="_blank">
+                        🌐 View Libraforge Product Site
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="project project-dark">
+            <h3>ChangeFlow™ - Workflow, Approval & Operational Change Platform</h3>
+
+            <p><strong>This is a full-stack, production-grade workflow engine designed for real operational
+                    environments—not a demo app.</strong></p>
+
+            <p>
+                ChangeFlow™ is a configurable workflow and approval platform built to control, track, and audit
+                operational change across departments.
+                It replaces fragmented, paper-based, and email-driven processes with a structured, rule-driven system
+                that enforces accountability
+                and provides full lifecycle visibility.
+            </p>
+
+            <p><strong>Challenge:</strong></p>
+            <ul>
+                <li>Change requests handled via paper, email, or informal communication</li>
+                <li>No reliable audit trail or searchable history</li>
+                <li>Approvals dependent on physical presence or manual routing</li>
+                <li>No enforcement of role-based authorization or qualification</li>
+            </ul>
+
+            <p><strong>Solution:</strong></p>
+            <p>
+                I designed and built ChangeFlow as a configurable workflow engine where requests move through defined
+                states
+                (submit → review → approve → implement → close), with strict role-based permissions, automated routing,
+                and event-driven notifications.
+            </p>
+
+            <p><strong>Full-Stack Scope:</strong></p>
+            <ul>
+                <li>Angular front-end application with dynamic workflow UI</li>
+                <li>Node.js / Express middleware API layer</li>
+                <li>Cloud Firestore data modeling for workflow state and history</li>
+                <li>Notification system (email + optional SMS/push)</li>
+                <li>Authentication and role-based authorization system</li>
+            </ul>
+
+            <h4>Core Platform Capabilities</h4>
+            <ul>
+                <li><strong>State-Based Workflow Engine:</strong> Requests move through controlled states with enforced
+                    transitions</li>
+                <li><strong>Role-Based Routing:</strong> Only authorized users can approve or act at each stage</li>
+                <li><strong>Audit Trail:</strong> Full history of actions, timestamps, and decisions</li>
+                <li><strong>Configurable Workflows:</strong> Supports permanent, temporary, and urgent change types</li>
+                <li><strong>Time-Based Logic:</strong> Automatic reminders and expiration handling for temporary changes
+                </li>
+                <li><strong>Notification System:</strong> Email + optional SMS/push for critical events</li>
+                <li><strong>Searchable History:</strong> All requests are queryable and reportable</li>
+            </ul>
+
+            <h4>API & Backend Design (Key Engineering Depth)</h4>
+            <ul>
+                <li>REST-style API endpoints for workflow operations, approvals, and reporting</li>
+                <li>Middleware layer handling validation, routing logic, and permissions</li>
+                <li>Data models designed for state transitions and historical traceability</li>
+                <li>Integration-ready architecture for external systems and data sources</li>
+            </ul>
+
+            <h4>Technology Stack</h4>
+            <ul>
+                <li><strong>Frontend:</strong> Angular, TypeScript, Bootstrap</li>
+                <li><strong>Backend:</strong> Node.js, Express.js</li>
+                <li><strong>Database:</strong> Cloud Firestore</li>
+                <li><strong>Hosting:</strong> Firebase Hosting & Functions</li>
+            </ul>
+
             <h4>Visual Overview</h4>
             <div class="video-container" style="position: relative;">
-                <!-- Preload Video -->
-                <video muted autoplay loop playsinline preload="auto" style="width: 100%; display: block; "
-                    (click)="loadVideo()" *ngIf="!videoLoaded">
+                <video muted autoplay loop playsinline preload="auto" style="width: 100%; display: block;">
                     <source src="/assets/placeholder_720_h264.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
             </div>
 
-            <h4>Additional Information</h4>
-            <p>For more details, explore the <a href="https://changeflow.ind-docs.app" target="_blank">Changeflow
-                    website</a> or sign up for a <a href="https://changeflow.ind-docs.app/trial" target="_blank">free
-                    trial</a> to experience how Changeflow can transform your change management processes.</p>
-        </div>
-
-        <div class="project project-light">
-            <h3>Power Monitoring Application</h3>
-            <p>I developed a power monitoring application that collects data via Modbus and CIP using Node.js. The
-                front-end is built with Angular and Material Design, offering a user-friendly interface for monitoring
-                power usage. The system stores data in the cloud for easy access and reporting, providing critical
-                insights into energy consumption.</p>
-            <p><strong>Challenge:</strong> 
-                The existing power monitoring application was obsolete and required updating. No vendor-supplied solution was available.
-                 System used combination of Kepware supplied data and native reads of some devices. Old system relied on two versions of Kepware as some of the meters were not supported in the newest Kepware software.
-                 Reports were not tailored to the specific needs of the facility.
+            <h4>Live Product</h4>
+            <p>
+                <a href="https://changeflow.ind-docs.app" target="_blank">
+                    🌐 View ChangeFlow Application
+                </a>
             </p>
-            <p><strong>Solution:</strong> 
-               I wrote an application that pulled the data from the meters in the field using a combination of CIP and Modbus protocols. Some of the data for the new calculations (specific power consumptions) only existed 
-               on the company website, so I wrote a web scraper component to scrub that data for inclusion in the system's reports.
+            <p>
+                <a href="https://changeflow.ind-docs.app/trial" target="_blank">
+                    ▶ Start Free Trial
+                </a>
             </p>
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Frontend:</strong> Angular, Material Design, Typescript</li>
-                <li><strong>Web Scraping:</strong> Puppeteer</li>
-                <li><strong>Backend:</strong> Node.js, Firebase, Firebase Functions, Express.js</li>
-                <li><strong>Database:</strong> MongoDB</li>
-                <li><strong>Hosting:</strong> localhost</li>
-            </ul>
-            <div class="images">
-                <figure>
-                    <img src="assets/PMSpc.webp" alt="Specific Power Consumption" style="width:100%; max-width:800px;" onclick="openLightbox(this.src)">
-                    <figcaption>Specific Power Consumption</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/PMMeters.webp" alt="Meters" style="width:100%; max-width:800px;" onclick="openLightbox(this.src)">
-                    <figcaption>Meters</figcaption>
-                </figure>
-            </div>
         </div>
 
         <div class="project project-dark">
+            <h3>Industrial Power Monitoring & Data Acquisition Platform</h3>
+
+            <p><strong>This system represents a full-stack industrial data pipeline—from field devices to
+                    analytics.</strong></p>
+
+            <p>
+                I designed and built a complete power monitoring and analytics platform that directly interfaces with
+                industrial meters and PLCs using native protocols including Modbus TCP and Ethernet/IP (CIP).
+                The system collects, processes, stores, and exposes energy data for reporting, visualization,
+                and operational decision-making.
+            </p>
+
+            <p><strong>Challenge:</strong></p>
+            <ul>
+                <li>Legacy system relied on multiple versions of Kepware with limited device support</li>
+                <li>No unified data model across different meter types and protocols</li>
+                <li>Inability to calculate plant-specific metrics such as specific power consumption</li>
+                <li>No flexible or queryable historical data for reporting</li>
+            </ul>
+
+            <p><strong>Solution:</strong></p>
+            <p>
+                I replaced the legacy system with a custom-built data acquisition platform that communicates directly
+                with
+                field devices, normalizes data across protocols, and stores time-series data in MongoDB for real-time
+                and historical analysis.
+            </p>
+
+            <h4>System Architecture</h4>
+            <ul>
+                <li><strong>Data Acquisition Layer:</strong> Node.js service performing direct Modbus TCP and CIP reads
+                    from meters and PLCs</li>
+                <li><strong>Protocol Handling:</strong> Custom register parsing (16-bit, 32-bit, endian-aware) and CIP
+                    assembly decoding</li>
+                <li><strong>Processing Layer:</strong> Normalization, scaling, and timestamping of raw field data</li>
+                <li><strong>Storage:</strong> MongoDB time-series style collections for high-frequency logging</li>
+                <li><strong>API Layer:</strong> Express-based REST API for querying, aggregation, and reporting</li>
+                <li><strong>Frontend:</strong> Angular dashboard with Material UI for visualization and analysis</li>
+            </ul>
+
+            <h4>Key Engineering Highlights</h4>
+            <ul>
+                <li><strong>Direct Industrial Communication:</strong>
+                    Implemented native Modbus TCP socket communication and Ethernet/IP (CIP) reads without relying on
+                    middleware.
+                </li>
+                <li><strong>Custom Data Parsing:</strong>
+                    Built endian-aware register decoding (UInt16/UInt32, BE/LE) and structured tag mapping for
+                    heterogeneous devices.
+                </li>
+                <li><strong>CIP Assembly Processing:</strong>
+                    Parsed raw assembly buffers from power meters into structured engineering values using custom
+                    classes.
+                </li>
+                <li><strong>Multi-Source Data Integration:</strong>
+                    Combined field data with externally scraped data (Puppeteer) to compute derived metrics.
+                </li>
+                <li><strong>Time-Series Analytics:</strong>
+                    Designed MongoDB aggregation pipelines for usage calculations, deltas, and reporting over time
+                    ranges.
+                </li>
+                <li><strong>Scalable Tag System:</strong>
+                    Dynamic tag configuration stored in database enabling flexible expansion without code changes.
+                </li>
+            </ul>
+
+            <h4>API Capabilities</h4>
+            <ul>
+                <li>Query historical tag data with pagination</li>
+                <li>Calculate energy usage over time windows</li>
+                <li>Aggregate consumption across meters and locations</li>
+                <li>Provide real-time and historical datasets to frontend dashboards</li>
+            </ul>
+
+            <h4>Technology Stack</h4>
+            <ul>
+                <li><strong>Backend:</strong> Node.js, Express, native TCP sockets</li>
+                <li><strong>Protocols:</strong> Modbus TCP, Ethernet/IP (CIP)</li>
+                <li><strong>Database:</strong> MongoDB (time-series style usage)</li>
+                <li><strong>Frontend:</strong> Angular, Material Design</li>
+                <li><strong>Data Collection:</strong> Custom polling engine with async/await orchestration</li>
+                <li><strong>Web Scraping:</strong> Puppeteer for external data integration</li>
+            </ul>
+
+            <p><strong>Outcome:</strong></p>
+            <p>
+                The system replaced legacy middleware, provided real-time visibility into plant energy usage,
+                enabled advanced reporting, and created a flexible platform for future expansion of industrial data
+                collection.
+            </p>
+
+            <div class="media-section">
+                <h4>System Demo</h4>
+                <video autoplay muted loop playsinline style="width: 100%; max-width: 800px;">
+                    <source src="assets/pm6500.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="project project-light">
             <h3>Automated Documenting ControlLogix PLC Functional Descriptions</h3>
             <p>Developed a series of Node.js scripts to document and validate ControlLogix PLC functional descriptions,
                 translating complex PLC logic into understandable formats.</p>
@@ -121,12 +361,30 @@
 
             <p><strong>Solution:</strong></p>
             <ul>
-                <li><strong>ControlLogix PLC to Boolean Expressions:</strong> Wrote a Node.js script to parse
-                    ControlLogix L5K export programs into boolean equivalent statements, using complex regular
-                    expressions.</li>
-                <li><strong>Boolean Expression to Natural Language Using OpenAI API:</strong> Developed a Node.js script
-                    to translate boolean language statements into a natural language synopsis, providing a comprehensive
-                    explanation of operations.</li>
+                <li><strong>ControlLogix PLC to Boolean Expressions:</strong> Exported ControlLogix L5K programs and
+                    built a Node.js parser that converts ladder and instruction patterns into normalized boolean
+                    expressions, creating a machine-readable intermediate representation for validation, documentation,
+                    and downstream AI-assisted translation.</li>
+                <li><strong>Boolean Expression to Structured Natural Language (AI-Assisted):</strong>
+                    Developed a prompt-engineered transformation pipeline using the OpenAI API to convert PLC boolean
+                    logic into structured, human-readable documentation and flow representations.
+
+                    Key aspects of the implementation:
+                    <ul>
+                        <li><strong>Domain-aware preprocessing:</strong> Injected tag-to-description mappings and
+                            normalized PLC expressions prior to inference to improve accuracy and consistency.</li>
+                        <li><strong>Deterministic prompt design:</strong> Engineered prompts with strict instructions
+                            (evaluation order, AND/OR semantics, nested logic handling) to ensure repeatable outputs
+                            suitable for engineering documentation.</li>
+                        <li><strong>Structured output enforcement:</strong> Required consistent dual-output format
+                            including <em>Plain English Explanation</em> and <em>Textual Flowchart</em> for both
+                            validation and usability.</li>
+                        <li><strong>Logic-preserving translation:</strong> Designed prompts to maintain execution
+                            semantics including grouping, branching, and sequential logic.</li>
+                        <li><strong>Pipeline integration:</strong> Integrated AI-generated outputs into a Node.js
+                            processing workflow for large-scale PLC documentation and validation.</li>
+                    </ul>
+                </li>
                 <li><strong>Document Alarm Values ControlLogix PLC:</strong> Created a Node.js script to extract digital
                     and analog alarm block parameters from ControlLogix exported files, simplifying the documentation
                     and validation process for a large set of alarms.</li>
@@ -135,102 +393,221 @@
             <p><strong>Outcome:</strong> The combined efforts allowed for accurate documentation, validation, and
                 explanation of complex PLC code, making it accessible and understandable for end users. This streamlined
                 the process of updating and validating the PLC functional descriptions.</p>
+
             <h4>Technology Stack</h4>
             <ul>
                 <li><strong>Frontend:</strong> MS Excel,VBA</li>
-                <li><strong>Backend:</strong> Node.js, OpenAI api</li>
+                <li><strong>Backend:</strong> Node.js, regex-based parsing, OpenAI API integration</li>
             </ul>
-            <p><strong>Example Code:</strong></p>
+            <p><strong>Example Code:</strong> The snippets below show the workflow from exported ControlLogix logic
+                parsing, to boolean expression generation, to prompt-engineered AI translation into structured
+                documentation.</p>
+
             <pre><code>
-        // Example from ControlLogix PLC to Boolean Expressions
-       
-        // This regex ensures there is an " AND " between such tags if they are adjacent without any separator.
+        // Parse exported L5K logic and normalize adjacent conditions into explicit boolean form
         line = line.replace(/(\w+\[\d+\]\.\w+\[\d+\]\.\d+)\s+(?=\w+\[\d+\]\.\w+\[\d+\]\.\d+)/g, '$1 AND ');
-        
-        // Example from Boolean Expression to Natural Language Using OpenAI API
-        const prompt = `Evaluate the following logical expression and provide a plain English explanation. 
-        Here are the definitions of the terms used:${mappingsString}
-        The expression includes tag names and descriptions separated by a '|' character. For example, 'R77M2|BAGHOUSE ID MOT COOL F1..MOK' means the tag name is 'R77M2' and the description is 'BAGHOUSE ID MOT COOL F1..MOK'.
-        Logical expression:${cleanedExpression}
-        Additionally, provide a textual flowchart with conditions and actions based on the logical expression. 
-        Each condition should be clearly defined and include the logical steps leading to the final action and retain the OR and AND keywords between steps.
-        Parentheses in the code should be evaluated as grouping statements for consideration as a whole.
-        Nested parentheses should indicate order of operations with inner most evaluated first.
-        Within enclosing parentheses AND conditions represents sequential actions and OR conditions branching conditions.
-        Conditions should be evaluated from left to right and inner parenthesis to outer parenthesis.
-        In evaluation order of operations OR represents a branching of logic and AND a joining condition.
-        Tag descriptions are designated with the following pattern tag|description where the | character is the delimiter.
-        Include the tag and descriptions in both the descriptive and flowchart outputs.
-        Plain English output should be designated as 'Plain English Explanation:'.
-        Flowchart output should be designated as 'Textual Flowchart:'.`;
-        return prompt;
-        
-        // Example from Document Alarm Values ControlLogix PLC
-        function extractAnalogAlarmDetails(content) {
-            const regex = /(\w+)\s*:\s*(ANALOG|ANALOG_ALARM)\s*\(Description\s*:=\s*"([^"]*)"\)\s*:=\s*\[(.*?)\];/gs;
-            const matches = [...content.matchAll(regex)];
-            const details = matches.map(match => {
-                const tag = match[1];
-                const type = match[2];
-                let description = match[3].replace(/\$N/g, ' '); // Replace $N with space
-               ...
-            return details;
+
+        // Example boolean expression generated from parsed PLC logic
+        const cleanedExpression = '(R707M2|BAGHOUSE ID MOT COOL F1..MOK AND NOT R707A1|BAGHOUSE ID MOT COOL F1..AL_HH) OR R707B3|FAN START PERMISSIVE';
+
+        // Prompt construction for PLC logic → structured documentation
+
+        const prompt = `
+        Evaluate the following logical expression and provide a plain English explanation.
+
+        Definitions:
+        ${mappingsString}
+
+        Logical expression:
+        ${cleanedExpression}
+
+        Additionally, provide a textual flowchart with conditions and actions based on the logical expression.
+
+        Rules:
+        - Preserve AND/OR relationships exactly
+        - Evaluate parentheses from inner to outer
+        - AND = sequential logic, OR = branching logic
+        - Include tag names and descriptions (tag|description format)
+        - Maintain execution semantics
+
+        Output Format:
+        Plain English Explanation:
+        Textual Flowchart:
+        `;
+
+        // OpenAI API call using HTTPS (low-level integration)
+
+        async function callOpenAI(prompt) {
+          const data = JSON.stringify({
+            model: 'gpt-4',
+            messages: [{ role: 'user', content: prompt }],
+            temperature: 0.0
+          });
+
+          const options = {
+            hostname: 'api.openai.com',
+            port: 443,
+            path: '/v1/chat/completions',
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+              'Content-Length': data.length
+            }
+          };
+
+          return new Promise((resolve, reject) => {
+            const req = https.request(options, (res) => {
+              let body = '';
+
+              res.on('data', chunk => body += chunk);
+
+              res.on('end', () => {
+                const parsed = JSON.parse(body);
+                resolve(parsed.choices[0].message.content.trim());
+              });
+            });
+
+            req.on('error', reject);
+            req.write(data);
+            req.end();
+          });
         }
             </code></pre>
         </div>
 
-
-
-
-
-
         <div class="project project-light">
-            <h3>Raspberry Pi Document Server</h3>
-            <p><strong>Challenge:</strong> 
-                Finding drawings and other user documents for specific machinery or equipment rooms is costly and inefficient in most facilities.
-                Documents are often illegible or missing. Users manuals and technical documents are often unavailable in the field and must be sought, often times with loss of critical time.
-                Paper documents may be accessed by unqualified users.
-            </p>
-            <p><strong>Solution:</strong> Libraforge software empowers users by placing essential documents directly at the equipment. It allows managers to control document access and create a dynamic, easily updatable library that can be modified in the field. Any file that can be consumed by a mobile device or tablet, such as training videos, electrical schematics, or drive manuals, can be stored and delivered to the user’s device.</p>
+            <!-- <section id="distributed-control"> -->
+            <h3>Distributed Control Programming Environment</h3>
+            <p><strong>This project represents a core example of my distributed embedded systems work.</strong></p>
+            <p>This system was built on LonWorks-based distributed microcontroller nodes communicating over twisted pair
+                networks.</p>
+            <p>The distributed programming environment is built around a network of LonWorks microcontroller nodes
+                connected via a twisted pair network. These nodes form the backbone of a building control network,
+                commonly deployed in environments such as correctional facilities and courthouses. Each node within this
+                system is equipped to monitor inputs and control outputs, facilitating automated tasks such as
+                monitoring door positions, controlling door mechanisms, and managing intercom connections.</p>
 
-            <p>A Raspberry Pi is configured as a wireless access point and web server to provide field documentation for electrical rooms, equipment, training videos, and other essential documents. The system allows users to create, update, read, and delete documents in the field, offering an updatable library where it is needed most. Additionally, the system provides role-specific access and rights management.</p>
-            
+            <h3>Drag-and-Drop Programming Interface</h3>
+            <p>The software developed for this system offers a drag-and-drop programming interface, enabling intuitive
+                and efficient programming of the distributed nodes. Users can place icons representing inputs, outputs,
+                and actions within a hierarchical tree structure. This tree structure directly maps to the input and
+                output conditions available in the firmware of the nodes. By dropping an input or output state onto the
+                tree, the system automatically generates the corresponding code and inserts it into the node’s
+                descriptor table.</p>
+
+            <h3>Distributed Stack-Based Machine</h3>
+            <p>Each node in the network operates as a stack-based machine. The programming environment compiles the tree
+                structure into a series of instructions, with each node's descriptor table containing 10-byte
+                descriptors. These descriptors serve as stack entries, holding all the information needed to evaluate
+                and execute instructions. The descriptors are distributed across multiple nodes, enabling decentralized
+                control and coordination within the network.</p>
+
+            <h3>Execution and Control</h3>
+            <p>When executed, the code on each node processes its descriptors sequentially. Each descriptor not only
+                carries the operation to be performed but also the location of the next instruction. This setup allows
+                the distributed nodes to work collaboratively, executing a sequence of operations that span across the
+                network, thereby achieving distributed control.</p>
+
+            <p>This design enables scalable and robust automation, particularly in environments that require the
+                coordination of multiple control points across a large area. By leveraging the drag-and-drop interface,
+                even complex control sequences can be programmed efficiently, ensuring that the system can adapt to a
+                wide range of control tasks with minimal manual coding.</p>
+            <div class="media-section" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+                <div style="flex: 1 1 320px; min-width: 280px;">
+                    <h4>Programming Environment</h4>
+                    <img src="assets/ioLogix.webp" alt="Programming Environment"
+                        style="width: 100%; max-width: 400px; display: block;" onclick="openLightbox(this.src)">
+                </div>
+                <div style="flex: 1 1 320px; min-width: 280px;">
+                    <h4>Documentation</h4>
+                    <img src="assets/ioLogixHelp.webp" alt="Documentation"
+                        style="width: 100%; max-width: 400px; display: block;" onclick="openLightbox(this.src)">
+                </div>
+            </div>
             <h4>Technology Stack</h4>
             <ul>
-                <li><strong>Frontend:</strong> EJS (Embedded JavaScript) for templating with Express EJS Layouts for
-                    layout management.</li>
-                <li><strong>Backend:</strong> Node.js with Express framework, utilizing middleware like `body-parser`
-                    for handling form data, `helmet` for security, and `serve-index` for directory listing.</li>
-                <li><strong>Database:</strong> SQLite3, providing lightweight and efficient database management,
-                    integrated with a custom database layer for managing users, roles, and departments.</li>
-                <li><strong>File Handling:</strong> `Multer` for file uploads, with disk storage for managing uploaded
-                    files.</li>
-                <li><strong>Security:</strong> Basic security features using `helmet`.</li>
-                <li><strong>Templating:</strong> Dynamic content rendering with EJS templates, providing a flexible view
-                    engine.</li>
+                <li><strong>Frontend:</strong> Custom application using Borland C++ Builder with drag-and-drop
+                    interface.</li>
+                <li><strong>Backend:</strong> Neuron C for firmware development, stack-based machine implementation.
+                </li>
+                <li><strong>Networking:</strong> Distributed Lonworks microcontroller nodes.</li>
+                <li><strong>Additional Tools:</strong> Borland Database Engine for managing descriptor tables and state
+                    information.</li>
             </ul>
-            <div class="media-section">
-                <h4>Application Video</h4>
-                <video controls style="width: 50%; max-width: 400px;" poster="assets/raspfilePlace.webp">
-                    <source src="assets/raspfile.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="media-section">
-                <h4>Schema</h4>
-                <img src="assets/dbSchema.webp" alt="Schema" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
-            </div>
-
+            <!-- </section> -->
         </div>
 
+        <div class="project project-dark">
+            <h3>Voice Over IP (VoIP) / PBX & Real-Time Media System</h3>
+
+            <p>
+                I designed and deployed a full VoIP and real-time communication system integrating telephony, video
+                streaming, PLC controls, and legacy intercom infrastructure. This system combined modern IP-based
+                communication with traditional analog systems in a highly controlled, industrial environment.
+            </p>
+
+            <p><strong>System Architecture:</strong></p>
+            <ul>
+                <li><strong>Core PBX:</strong> Asterisk (SIP server) running on Debian Linux</li>
+                <li><strong>Signaling & Media:</strong> SIP for call control, RTP for real-time audio streams</li>
+                <li><strong>Network:</strong> Layer 3 switching with QoS prioritization for voice/video traffic</li>
+                <li><strong>Wireless:</strong> Wi-Fi access points supporting mobile VoIP devices and PDAs</li>
+                <li><strong>Video:</strong> Axis IP cameras and media servers providing live video streams</li>
+            </ul>
+
+            <p><strong>Custom Software & Integration:</strong></p>
+            <ul>
+                <li>Developed custom SIP client integrations using open-source SIP stacks</li>
+                <li>Built interface and control layers using <strong>Python, PHP, and Bash scripting</strong></li>
+                <li>Created web-based configuration tools using <strong>Apache and Django</strong> for dial plan and
+                    device management</li>
+                <li>Integrated <strong>VLC (VideoLAN)</strong> for real-time video streaming into custom HMI
+                    applications</li>
+                <li>Developed GUI interfaces using <strong>Tkinter</strong> for embedded client systems</li>
+            </ul>
+
+            <p><strong>Devices & Endpoints:</strong></p>
+            <ul>
+                <li>Aastra 480 VoIP desktop master stations</li>
+                <li>Hitachi IP5000 Wi-Fi VoIP phones</li>
+                <li>Symbol PPT8800 PDA devices with custom SIP + video clients</li>
+                <li>Touchscreen HMI systems for control and monitoring</li>
+            </ul>
+
+            <p><strong>Industrial & Legacy System Integration:</strong></p>
+            <ul>
+                <li>Bridged IP-based VoIP systems to traditional analog intercoms using <strong>ATA (Analog Telephone
+                        Adapters)</strong></li>
+                <li>Integrated telephony control with <strong>PLC-based intercom and locking systems</strong></li>
+                <li>Enabled coordinated control between voice communication, video monitoring, and physical security
+                    systems</li>
+            </ul>
+
+
+            <div class="media-section">
+                <h4>System Architecture & Screens</h4>
+                <img src="assets/pdaControl.webp" alt="VOIP system architecture" style="width: 100%; max-width: 800px;"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <h4>Core Technologies</h4>
+            <ul>
+                <li><strong>Telephony & Media:</strong> Asterisk, SIP, RTP, Axis streaming</li>
+                <li><strong>Backend & Integration:</strong> Python, Django, PHP, Bash</li>
+                <li><strong>Networking:</strong> Layer 3 switching, QoS, Wi-Fi VoIP</li>
+                <li><strong>Systems Integration:</strong> PLC control, ATA bridging, HMI interfaces</li>
+            </ul>
+        </div>
 
         <div class="project project-dark">
             <h3>Video Visitation System</h3>
             <p>I designed and implemented a video visitation system that integrates Omron PLCs, Axis media servers, and
                 Indusoft HMI software. This system was developed to improve security and streamline operations in
                 correctional facilities, providing reliable video communication between inmates and visitors.</p>
-                <!-- <div class="media-section">
+            <p>This system combined scheduling, database-backed visit management, live IP video, HMI interfaces, and PLC
+                integration into a unified operational platform for correctional facilities.</p>
+            <!-- <div class="media-section">
                     <h4>Visit Setup Matrix</h4>
                     <img src="assets/matrix.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
                 </div>
@@ -242,6 +619,11 @@
                     <h4>Video Conference</h4>
                     <img src="assets/cam.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
                 </div> -->
+            <div class="media-section">
+                <h4>System Interface & Scheduling</h4>
+                <img src="assets/vidVis.webp" alt="Video visitation system" style="width: 100%; max-width: 800px;"
+                    onclick="openLightbox(this.src)">
+            </div>
             <h4>Technology Stack</h4>
             <ul>
                 <li><strong>Frontend:</strong> JavaScript, ADO, HTML, Indusoft Web Studio for HMI.</li>
@@ -249,111 +631,29 @@
                 <li><strong>Database:</strong> SQL Server.</li>
                 <li><strong>Additional Tools:</strong> PLC integration</li>
             </ul>
-           
         </div>
-        <div class="project project-light">
-        <!-- <section id="distributed-control"> -->
-            <h3>Distributed Control Programming Environment</h3>
-            <p>The distributed programming environment is built around a network of LonWorks microcontroller nodes connected via a twisted pair network. These nodes form the backbone of a building control network, commonly deployed in environments such as correctional facilities and courthouses. Each node within this system is equipped to monitor inputs and control outputs, facilitating automated tasks such as monitoring door positions, controlling door mechanisms, and managing intercom connections.</p>
-            
-            <h3>Drag-and-Drop Programming Interface</h3>
-            <p>The software developed for this system offers a drag-and-drop programming interface, enabling intuitive and efficient programming of the distributed nodes. Users can place icons representing inputs, outputs, and actions within a hierarchical tree structure. This tree structure directly maps to the input and output conditions available in the firmware of the nodes. By dropping an input or output state onto the tree, the system automatically generates the corresponding code and inserts it into the node’s descriptor table.</p>
-            
-            <h3>Distributed Stack-Based Machine</h3>
-            <p>Each node in the network operates as a stack-based machine. The programming environment compiles the tree structure into a series of instructions, with each node's descriptor table containing 10-byte descriptors. These descriptors serve as stack entries, holding all the information needed to evaluate and execute instructions. The descriptors are distributed across multiple nodes, enabling decentralized control and coordination within the network.</p>
-            
-            <h3>Execution and Control</h3>
-            <p>When executed, the code on each node processes its descriptors sequentially. Each descriptor not only carries the operation to be performed but also the location of the next instruction. This setup allows the distributed nodes to work collaboratively, executing a sequence of operations that span across the network, thereby achieving distributed control.</p>
-            
-            <p>This design enables scalable and robust automation, particularly in environments that require the coordination of multiple control points across a large area. By leveraging the drag-and-drop interface, even complex control sequences can be programmed efficiently, ensuring that the system can adapt to a wide range of control tasks with minimal manual coding.</p>
-            <div class="media-section">
-                <h4>Programming Environment</h4>
-                <img src="assets/ioLogix.webp" alt="Programming Environment" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
-            </div>
-            <div class="media-section">
-                <h4>Documentation </h4>
-                <img src="assets/ioLogixHelp.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
-            </div>
-            <h4>Technology Stack</h4>
+
+        <h2>Additional Systems and Engineering Experience</h2>
+        <div class="project project-dark">
+            <h3>Embedded & Firmware Systems Engineering</h3>
+            <p>I design and build embedded systems at both the firmware and hardware levels, including
+                microcontroller-based devices, distributed control networks, and custom circuit board designs.
+                I also developed firmware for security systems, intercoms, annunciation boards, and lighting controls
+                using Neuron C on LonWorks-based microcontrollers. These systems included custom protocol conversion
+                (UART to Omron), distributed communication layers, and tight integration with PLC-based industrial
+                control systems.
+            </p>
             <ul>
-                <li><strong>Frontend:</strong> Custom application using Borland C++ Builder with drag-and-drop
-                    interface.</li>
-                <li><strong>Backend:</strong> Neuron C for firmware development, stack-based machine implementation.
-                </li>
-                <li><strong>Networking:</strong> Distributed Lonworks microcontroller nodes.</li>
-                <li><strong>Additional Tools:</strong> Borland Database Engine for managing descriptor tables and state
-                    information.</li>
+                <li>Designed and laid out over 24 digital and analog circuit boards including intercom distribution
+                    systems, RS-232 gateways, microphone preamps, and high-density 192 I/O microcontroller interface
+                    boards.</li>
+                <li>Developed firmware for real-time distributed microcontroller systems using stack-based execution
+                    models across networked nodes.</li>
+                <li>Implemented communication layers across UART, fieldbus, and industrial protocols.</li>
             </ul>
-        <!-- </section> -->
+
         </div>
 
-
-        <!-- <div class="project">
-            <h3>Distributed Programming Environment</h3>
-            <p>Designed and developed a distributed programming environment for building automation, allowing for
-                decentralized control over various devices using Lonworks technology.</p>
-                <div class="media-section">
-                    <h4>Programming Environment</h4>
-                    <img src="assets/ioLogix.webp" alt="Programming Environment" style="width: 50%; max-width: 400px;">
-                </div>
-                <div class="media-section">
-                    <h4>Documentation </h4>
-                    <img src="assets/ioLogixHelp.webp" alt="voipphone" style="width: 50%; max-width: 400px;">
-                </div>
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Frontend:</strong> Custom application using Borland C++ Builder with drag-and-drop
-                    interface.</li>
-                <li><strong>Backend:</strong> Neuron C for firmware development, stack-based machine implementation.
-                </li>
-                <li><strong>Networking:</strong> Distributed Lonworks microcontroller nodes.</li>
-                <li><strong>Additional Tools:</strong> Borland Database Engine for managing descriptor tables and state
-                    information.</li>
-            </ul>
-           
-        </div> -->
-
-
-       
-       <div class="project project-dark">
-        <h3>Voice Over IP PBX System</h3>
-        <p>This project involved the development and deployment of a comprehensive VOIP / CCTV  and PLC controls system using a Linux-based
-            software PBX,PLC intercom and locking controls, and Axis IP cameras. The system integrates various technologies, including VoIP phones, wireless access points,
-            layer 3 switches, CCTV equipment, and PLC intercom, lighting and locking systems.</p>
-            <div class="media-section">
-                <h4>Device Screen</h4>
-                <img src="assets/voipphone.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
-            </div>
-        <h4>Technology Stack</h4>
-        <ul>
-            <li><strong>PBX Software:</strong> Asterisk (SIP server) on Debian Linux.</li>
-            <li><strong>Scripting and Web Framework:</strong> Python, PHP, Bash scripts, Apache, and Django.</li>
-            <li><strong>VoIP Network:</strong> SIP network managed by Asterisk server with QoS provided by a layer 3
-                switch. Wireless access points enable connectivity for PDAs and wireless VoIP phones.</li>
-            <li><strong>Devices:</strong> Aastra 480 VoIP phones, Hitachi IP5000 WiFi phones, Symbol PPT8800 PDA with
-                custom SIP client and streaming video playback integration.</li>
-            <li><strong>Interfacing:</strong> ATA (Analog Telephone Adapter) for integrating traditional intercom
-                systems with digital VoIP systems. Control is managed via a PLC.</li>
-        </ul>
-
-        <h4>Additional Features</h4>
-        <p>The system also includes custom media client software integrated with HMI packages via Python scripting,
-            enabling live video streaming from an Axis media server to various devices.</p>
-
-       
-        </div>
-        
-        <div class="project project-light">
-            <h3>C Language Firmware Design</h3>
-            <p>Developed advanced firmware for locking systems, intercoms, phone master stations, annunciation boards, and lighting controls using Neuron C programming language on Echelon microcontrollers. These microcontrollers communicated over twisted pair networks via the LonWorks protocol. I also developed custom protocol conversion from serial UARTs to Omron Protocol, enabling seamless communication between LonWorks and Omron PLCs. I designed over 24 circuit boards, including through-hole and multilayer surface-mount designs, utilizing Protel EDA for schematic capture, routing, and component layout.</p>
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Programming Language:</strong> Neuron C</li>
-                <li><strong>Hardware:</strong> Echelon Microcontrollers, Custom Circuit Boards</li>
-                <li><strong>Tools:</strong> Protel EDA, LonWorks Protocol, UART to Omron Protocol Conversion</li>
-            </ul>
-        </div>
-        
     </section>
 
     <!-- <div class="services">
@@ -384,70 +684,51 @@
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
+
         <ul>
-            <li><strong>Programming Languages:</strong> C, C++, Python, JavaScript, TypeScript, HTML, CSS</li>
-            <li><strong>Frameworks and Tools:</strong> Angular, Node.js, Express.js, MongoDB, Firebase, RSLogix,
-                Indusoft Web Studio, Wonderware, Asterisk, Borland C++ Builder, Altium EDA</li>
-            <li><strong>Other Skills:</strong> Embedded firmware development, PLC programming, industrial communication
-                protocols (Modbus, CAN, Lonworks, Ethernet/IP, DeviceNet, TCP/IP), software configuration management
-            </li>
+            <li><strong>Frontend:</strong> Angular, JavaScript, TypeScript, HTML, CSS, Bootstrap, EJS</li>
+            <li><strong>Backend:</strong> Node.js, Express.js, Firebase Functions, REST-style APIs, authentication,
+                workflow logic</li>
+            <li><strong>Data and Storage:</strong> SQLite, MongoDB, Cloud Firestore, structured data modeling</li>
+            <li><strong>Product and Platform Work:</strong> role-based access control, approval workflows,
+                notifications, administrative tools, search, forms, offline-first design, edge deployment</li>
+            <li><strong>Core Languages:</strong> C, C++, Python, JavaScript, TypeScript</li>
+            <li><strong>Embedded & Systems:</strong> microcontroller firmware, distributed control systems,
+                LonWorks, UART, fieldbus integration, real-time systems</li>
+            <li><strong>Industrial & Controls:</strong> PLC programming, Modbus, CAN, Ethernet/IP, DeviceNet,
+                control systems integration</li>
+            <li><strong>Tools & Platforms:</strong> Asterisk, RSLogix, Wonderware, Indusoft Web Studio, Borland C++
+                Builder, Altium EDA</li>
         </ul>
+
     </section>
 
     <!-- Professional Experience Section -->
     <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="experience">
-            <h3>Systems Engineer at Argos Cement (2015 - Present)</h3>
-            <p>At Argos Cement, I’ve been responsible for developing and programming Allen Bradley PLC systems using
-                RSLogix 5000, 500, and 5. I’ve managed network equipment and servers, including VMware ESXI hosts and
-                clients, and led various cost-saving and production improvement projects. My role also involved
-                designing and implementing power monitoring systems using Node.js, Angular, and MongoDB.</p>
-            <ul>
-                <li>Developed a comprehensive power monitoring system.</li>
-                <li>Implemented a robust data collection and reporting framework.</li>
-            </ul>
-        </div>
-        <div class="experience">
-            <h3>Plant PLC/Manufacturing Programmer at U.S. Pipe and Foundry (2013 - 2015)</h3>
-            <p>In this role, I programmed and troubleshooted Allen Bradley PLCs and GE PLC equipment. I also developed
-                HMI applications using InTouch Wonderware and FactoryTalk View, and managed the integration of plant
-                systems with SQL Server Management Studio and Visual Basic.</p>
-            <ul>
-                <li>Successfully integrated multiple plant systems, enhancing operational efficiency.</li>
-                <li>Led electrical projects and managed personnel during equipment installs and retrofits.</li>
-            </ul>
-        </div>
-        <div class="experience">
-            <h3>Project Engineer at Norment Security Group (2010 - 2013)</h3>
-            <p>As a Project Engineer, I designed and programmed building automation, intercommunication, and CCTV
-                systems. I was also responsible for creating control system layouts and electrical connection diagrams
-                using AutoCAD Electrical, and developing training materials for maintenance and troubleshooting.</p>
-            <ul>
-                <li>Designed and implemented several critical security systems.</li>
-                <li>Developed training programs that improved on-site technical support.</li>
-            </ul>
-        </div>
-        <div class="experience">
-            <h3>Project Engineer at SimplexGrinnell (2009 - 2010)</h3>
-            <p>At SimplexGrinnell, I designed and implemented building automation and security systems. I supervised the
-                installation and integration of complex electrical/electronic systems, utilizing tools like Indusoft
-                HMI, Wonderware HMI, and Omron CX Programmer.</p>
-            <ul>
-                <li>Successfully integrated multiple systems, ensuring seamless operation across facilities.</li>
-                <li>Led the implementation of advanced security measures.</li>
-            </ul>
-        </div>
-        <div class="experience">
-            <h3>Production / R&D Engineer at Trentech (Norment Security Group) (1997 - 2009)</h3>
-            <p>During my tenure at Trentech, I designed and developed over 24 digital and analog circuit boards for
-                building automation systems. I also led the development of distributed control software for Lonworks
-                network-based embedded devices, integrating these systems with Borland C++ Builder.</p>
-            <ul>
-                <li>Spearheaded the development of a VOIP intercom system.</li>
-                <li>Designed and implemented a video visitation system for correctional facilities.</li>
-            </ul>
-        </div>
+        <h2>Engineering Background</h2>
+        <p>
+            I bring more than two decades of experience building embedded systems, industrial automation platforms,
+            distributed control software, networking solutions, and full-stack applications. My background spans
+            firmware,
+            PLC systems, field communications, real-time media systems, backend services, and modern web platforms.
+        </p>
+        <p>
+            Earlier work focused on embedded firmware, distributed control, industrial networking, and plant systems
+            integration.
+            More recent work has expanded that foundation into full-stack product development, workflow platforms,
+            edge-hosted
+            systems, industrial data acquisition, and AI-assisted engineering tools.
+        </p>
+        <ul>
+            <li>Designed and deployed distributed control, communication, and automation systems in production
+                environments</li>
+            <li>Built embedded firmware, custom hardware, and protocol integration layers for industrial and security
+                systems</li>
+            <li>Developed plant-facing software platforms for workflow, reporting, monitoring, and operational
+                documentation</li>
+            <li>Integrated PLCs, industrial protocols, databases, APIs, and user interfaces into complete working
+                systems</li>
+        </ul>
     </section>
 
     <!-- Certifications and Education Section -->
@@ -460,20 +741,25 @@
         </ul>
         <h3>Education:</h3>
         <ul>
-            <li>Troy State University System — 72 semester hours in CIS Curriculum, 3.67 GPA</li>
-            <li>George C. Wallace Community College — AAS in Industrial Electronics Technology, 3.72 GPA</li>
+            <li>Troy State University System — 72 semester hours in CIS Curriculum</li>
+            <li>George C. Wallace Community College — AAS in Industrial Electronics Technology</li>
         </ul>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you'd like to get in touch, please email me at <a href="mailto:info@ind-docs.app">info@ind-docs.app</a>.</p>
-        <p>I am available for consulting services through my company, Industrial Docs LLC. Feel free to reach out to discuss how we can help your business thrive.</p>
-        <p><a href="https://www.linkedin.com/in/danny-brown-56757034/" target="_blank">Connect with me on LinkedIn</a></p>
+        <p>If you'd like to get in touch, please email me at <a href="mailto:info@ind-docs.app">info@ind-docs.app</a>.
+        </p>
+        <p>I am open to remote full-stack engineering roles, consulting engagements, and product-focused software
+            opportunities. Feel free to reach out if you are looking for someone who can design, build, and ship
+            complete systems.</p>
+        <p><a href="https://www.linkedin.com/in/danny-brown-56757034/" target="_blank">Connect with me on LinkedIn</a>
+        </p>
+        <p><a href="https://github.com/danbrwn" target="_blank">View my GitHub profile</a></p>
     </section>
-    
-    
+
+
 
     <!-- Optional Blog/Articles Section -->
     <!-- <section id="blog">
@@ -483,18 +769,18 @@
             challenges.</p>
     </section> -->
 
-    
+
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Dan Brown. All rights reserved.</p>
+        <p>© 2026 Dan Brown. All rights reserved.</p>
     </footer>
     <!-- Lightbox Container -->
-<div id="lightbox" style="display:none;">
-    <span id="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="Enlarged Image">
-</div>
-<script src="script.js"></script>
+    <div id="lightbox" style="display:none;">
+        <span id="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged Image">
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
