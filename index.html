@@ -7,6 +7,30 @@
     <title>Dan Brown - Software, Systems & Embedded Engineer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const allDetails = document.querySelectorAll('details');
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                const targetId = link.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+
+                if (target && target.tagName.toLowerCase() === 'details') {
+                    // Close all others
+                    allDetails.forEach(d => d.open = false);
+
+                    // Open selected
+                    target.open = true;
+
+                    setTimeout(() => {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            });
+        });
+    });
+</script>
 
 <body>
     <!-- Home/Introduction Section -->
@@ -22,7 +46,9 @@
 
 
         <p>
-            Featured products include <strong>Libraforge™</strong>, an offline-first industrial knowledge, files, and forms platform for edge deployment, and <strong>ChangeFlow™</strong>, a workflow and approval platform for controlled operational change.
+            Featured products include <strong>Libraforge™</strong>, an offline-first industrial knowledge, files, and
+            forms platform for edge deployment, and <strong>ChangeFlow™</strong>, a workflow and approval platform for
+            controlled operational change.
         </p>
         <p>
             <a href="#projects">View Projects</a> |
@@ -76,254 +102,454 @@
     <section id="projects">
         <h2>Featured Products & Engineering Projects</h2>
         <p>These projects represent my strongest product-focused, full-stack work.</p>
-        <div class="project project-light">
-            <h3>Libraforge™ - Offline-First Industrial Knowledge, Files & Forms Platform</h3>
-            <p><strong>Challenge:</strong>
-                Finding drawings and other user documents for specific machinery or equipment rooms is costly and
-                inefficient in most facilities.
-                Documents are often illegible or missing. Users manuals and technical documents are often unavailable in
-                the field and must be sought, often times with loss of critical time.
-                Paper documents may be accessed by unqualified users.
-            </p>
-            <p><strong>Solution:</strong> Libraforge™ is an offline-first industrial file, forms, and knowledge platform
-                that places critical files, procedures, forms, videos, notes, and work instructions directly at the
-                point of use. It gives supervisors and administrators control over access, organization, search,
-                compliance workflows, and updates while making documentation easy to consume from mobile devices in the
-                field.</p>
-
-            <p>The platform is designed for deployment on compact edge hardware such as Raspberry Pi devices, where it
-                can operate as a local web server and wireless access point. This allows teams to access equipment
-                documentation, complete forms, capture field information, search notes, tag files, and manage role-based
-                content even when cloud connectivity is limited, undesirable, or completely unavailable.</p>
-
-            <p><strong>Full-Stack Scope:</strong> platform architecture, server-side rendering, user and role
-                management, file delivery, search and metadata systems, note capture, form design and publishing
-                workflows, PDF generation, local deployment, HTTPS support, and offline-first operation.</p>
-            <p><strong>What Makes It Distinct:</strong> Libraforge™ is more than a file browser. It combines secure
-                document delivery, department and role-based access control, built-in search, LibraNotes knowledge
-                capture, LibraTags metadata, schema-driven forms, versioned publishing, signed PDF outputs, local
-                branding, HTTPS certificate management, backup workflows, and edge deployment into a single
-                appliance-style platform.</p>
-
-            <h4>Key Product Capabilities</h4>
-            <ul>
-                <li><strong>Controlled document delivery:</strong> role-based access to files, folders, departments, and
-                    archive downloads for operational documentation in the field.</li>
-                <li><strong>Knowledge system:</strong> LibraNotes™, LibraSearch™, and LibraTags™ turn the file structure
-                    into a searchable operational knowledge base.</li>
-                <li><strong>Compliance-ready forms:</strong> schema-based form builder, publishing workflow, version
-                    tracking, cryptographic schema hashes, and signed PDF submissions.</li>
-                <li><strong>Edge deployment:</strong> runs locally on compact hardware with offline-first access, local
-                    Wi-Fi access point support, and optional wired Ethernet deployment.</li>
-                <li><strong>Security and IT fit:</strong> HTTPS support, device certificates, optional Root CA trust
-                    model, workspace branding, SMTP notifications, and managed backups.</li>
-            </ul>
-
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Frontend:</strong> EJS templating, responsive HTML/CSS/JavaScript, and server-rendered
-                    operational interfaces optimized for mobile and plant-floor use.</li>
-                <li><strong>Backend:</strong> Node.js and Express with middleware-driven request handling,
-                    authentication, uploads, optimization pipelines, and appliance-style local hosting.</li>
-                <li><strong>Data and Storage:</strong> SQLite for users, roles, departments, settings, and platform
-                    metadata, plus structured filesystem-based content organization for documents, notes, forms, and
-                    completed records.</li>
-                <li><strong>Forms Engine:</strong> visual form builder, versioned publishing, Excel template import,
-                    direct schema import, PDF master generation, technician submissions, and signed PDF output with
-                    verification hashes.</li>
-                <li><strong>Search and Metadata:</strong> context-aware search across file names, notes, form titles,
-                    task names, tags, and metadata using LibraNotes and LibraTags.</li>
-                <li><strong>Platform Features:</strong> image optimization, video transcoding to H.264 MP4, SMTP
-                    notifications, HTTPS certificates, local CA support, AP and Ethernet configuration, USB snapshot
-                    backups, and workspace branding.</li>
-            </ul>
-            <div class="media-section">
-                <h4>Live Demo</h4>
-
-                <div style="margin-top: 10px;">
-                    <iframe width="100%" height="315"
-                        src="https://www.youtube.com/embed/CuA192qt08Y?autoplay=1&mute=1&loop=1&playlist=CuA192qt08Y"
-                        title="Libraforge Demo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                    </iframe>
+        <div class="project-overview-grid">
+            <div class="project-overview-card">
+                <h3>Libraforge™</h3>
+                <p>Offline-first industrial knowledge, files, and forms platform built for edge deployment and
+                    point-of-use documentation.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Node.js</span>
+                    <span class="project-tag">Express</span>
+                    <span class="project-tag">SQLite</span>
+                    <span class="project-tag">Offline-First</span>
+                    <span class="project-tag">Edge Platform</span>
                 </div>
+                <p><a href="#libraforge-details">View Details</a></p>
+            </div>
 
-                <p>
-                    <a href="https://youtu.be/CuA192qt08Y" target="_blank">
-                        ▶ Watch on YouTube
-                    </a>
-                </p>
-                <p>
-                    <a href="https://libraforge.com/" target="_blank">
-                        🌐 View Libraforge Product Site
-                    </a>
-                </p>
+            <div class="project-overview-card">
+                <h3>ChangeFlow™</h3>
+                <p>Production-grade workflow and approval engine for controlled operational change, auditability, and
+                    role-based routing.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Angular</span>
+                    <span class="project-tag">Node.js</span>
+                    <span class="project-tag">Firestore</span>
+                    <span class="project-tag">Workflow Engine</span>
+                    <span class="project-tag">RBAC</span>
+                </div>
+                <p><a href="#changeflow-details">View Details</a></p>
+            </div>
+
+            <div class="project-overview-card">
+                <h3>Communications / Control Platform</h3>
+                <p>Distributed real-time system integrating telephony, PLC control, mobile HMIs, desktop SIP endpoints,
+                    and live video.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Asterisk</span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">PHP</span>
+                    <span class="project-tag">UDP</span>
+                    <span class="project-tag">PLCs</span>
+                </div>
+                <p><a href="#comms-details">View Details</a></p>
+            </div>
+
+            <div class="project-overview-card">
+                <h3>Power Monitoring Platform</h3>
+                <p>Industrial data acquisition and analytics platform using direct Modbus TCP and Ethernet/IP
+                    communication with field devices.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Modbus TCP</span>
+                    <span class="project-tag">CIP</span>
+                    <span class="project-tag">MongoDB</span>
+                    <span class="project-tag">Angular</span>
+                    <span class="project-tag">Industrial Data</span>
+                </div>
+                <p><a href="#power-details">View Details</a></p>
+            </div>
+
+            <div class="project-overview-card">
+                <h3>PLC Documentation Automation</h3>
+                <p>Automated ControlLogix documentation pipeline converting exported PLC logic into structured
+                    engineering explanations.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Node.js</span>
+                    <span class="project-tag">Regex Parsing</span>
+                    <span class="project-tag">OpenAI API</span>
+                    <span class="project-tag">PLC Logic</span>
+                </div>
+                <p><a href="#plc-docs-details">View Details</a></p>
+            </div>
+
+            <div class="project-overview-card">
+                <h3>Distributed Control Environment</h3>
+                <p>Distributed programming and execution platform for LonWorks-based embedded control nodes and building
+                    automation.</p>
+                <div class="project-tags">
+                    <span class="project-tag">C++</span>
+                    <span class="project-tag">Neuron C</span>
+                    <span class="project-tag">LonWorks</span>
+                    <span class="project-tag">Embedded Systems</span>
+                </div>
+                <p><a href="#distributed-details">View Details</a></p>
+            </div>
+            <div class="project-overview-card">
+                <h3>Video Visitation System</h3>
+                <p>Secure video visitation platform integrating scheduling, PLC control, IP cameras, and HMI interfaces
+                    for correctional facilities.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Asterisk</span>
+                    <span class="project-tag">C++</span>
+                    <span class="project-tag">ActiveX</span>
+                    <span class="project-tag">SQL Server</span>
+                    <span class="project-tag">PLC Integration</span>
+                </div>
+                <p><a href="#video-visitation-details">View Details</a></p>
             </div>
         </div>
+        <details class="project-detail-toggle" id="libraforge-details">
+            <summary>Libraforge™ — Detailed Project View</summary>
+            <div class="project-detail-inner">
+                <div class="project project-light">
+                    <h3>Libraforge™ - Offline-First Industrial Knowledge, Files & Forms Platform</h3>
+                    <p><strong>Challenge:</strong>
+                        Finding drawings and other user documents for specific machinery or equipment rooms is costly
+                        and
+                        inefficient in most facilities.
+                        Documents are often illegible or missing. Users manuals and technical documents are often
+                        unavailable in
+                        the field and must be sought, often times with loss of critical time.
+                        Paper documents may be accessed by unqualified users.
+                    </p>
+                    <p><strong>Solution:</strong> Libraforge™ is an offline-first industrial file, forms, and knowledge
+                        platform
+                        that places critical files, procedures, forms, videos, notes, and work instructions directly at
+                        the
+                        point of use. It gives supervisors and administrators control over access, organization, search,
+                        compliance workflows, and updates while making documentation easy to consume from mobile devices
+                        in the
+                        field.</p>
 
-        <div class="project project-dark">
-            <h3>ChangeFlow™ - Workflow, Approval & Operational Change Platform</h3>
+                    <p>The platform is designed for deployment on compact edge hardware such as Raspberry Pi devices,
+                        where it
+                        can operate as a local web server and wireless access point. This allows teams to access
+                        equipment
+                        documentation, complete forms, capture field information, search notes, tag files, and manage
+                        role-based
+                        content even when cloud connectivity is limited, undesirable, or completely unavailable.</p>
 
-            <p><strong>This is a full-stack, production-grade workflow engine designed for real operational
-                    environments—not a demo app.</strong></p>
+                    <p><strong>Full-Stack Scope:</strong> platform architecture, server-side rendering, user and role
+                        management, file delivery, search and metadata systems, note capture, form design and publishing
+                        workflows, PDF generation, local deployment, HTTPS support, and offline-first operation.</p>
+                    <p><strong>What Makes It Distinct:</strong> Libraforge™ is more than a file browser. It combines
+                        secure
+                        document delivery, department and role-based access control, built-in search, LibraNotes
+                        knowledge
+                        capture, LibraTags metadata, schema-driven forms, versioned publishing, signed PDF outputs,
+                        local
+                        branding, HTTPS certificate management, backup workflows, and edge deployment into a single
+                        appliance-style platform.</p>
 
-            <p>
-                ChangeFlow™ is a configurable workflow and approval platform built to control, track, and audit
-                operational change across departments.
-                It replaces fragmented, paper-based, and email-driven processes with a structured, rule-driven system
-                that enforces accountability
-                and provides full lifecycle visibility.
-            </p>
+                    <h4>Key Product Capabilities</h4>
+                    <ul>
+                        <li><strong>Controlled document delivery:</strong> role-based access to files, folders,
+                            departments, and
+                            archive downloads for operational documentation in the field.</li>
+                        <li><strong>Knowledge system:</strong> LibraNotes™, LibraSearch™, and LibraTags™ turn the file
+                            structure
+                            into a searchable operational knowledge base.</li>
+                        <li><strong>Compliance-ready forms:</strong> schema-based form builder, publishing workflow,
+                            version
+                            tracking, cryptographic schema hashes, and signed PDF submissions.</li>
+                        <li><strong>Edge deployment:</strong> runs locally on compact hardware with offline-first
+                            access, local
+                            Wi-Fi access point support, and optional wired Ethernet deployment.</li>
+                        <li><strong>Security and IT fit:</strong> HTTPS support, device certificates, optional Root CA
+                            trust
+                            model, workspace branding, SMTP notifications, and managed backups.</li>
+                    </ul>
 
-            <p><strong>Challenge:</strong></p>
-            <ul>
-                <li>Change requests handled via paper, email, or informal communication</li>
-                <li>No reliable audit trail or searchable history</li>
-                <li>Approvals dependent on physical presence or manual routing</li>
-                <li>No enforcement of role-based authorization or qualification</li>
-            </ul>
+                    <h4>Technology Stack</h4>
+                    <ul>
+                        <li><strong>Frontend:</strong> EJS templating, responsive HTML/CSS/JavaScript, and
+                            server-rendered
+                            operational interfaces optimized for mobile and plant-floor use.</li>
+                        <li><strong>Backend:</strong> Node.js and Express with middleware-driven request handling,
+                            authentication, uploads, optimization pipelines, and appliance-style local hosting.</li>
+                        <li><strong>Data and Storage:</strong> SQLite for users, roles, departments, settings, and
+                            platform
+                            metadata, plus structured filesystem-based content organization for documents, notes, forms,
+                            and
+                            completed records.</li>
+                        <li><strong>Forms Engine:</strong> visual form builder, versioned publishing, Excel template
+                            import,
+                            direct schema import, PDF master generation, technician submissions, and signed PDF output
+                            with
+                            verification hashes.</li>
+                        <li><strong>Search and Metadata:</strong> context-aware search across file names, notes, form
+                            titles,
+                            task names, tags, and metadata using LibraNotes and LibraTags.</li>
+                        <li><strong>Platform Features:</strong> image optimization, video transcoding to H.264 MP4, SMTP
+                            notifications, HTTPS certificates, local CA support, AP and Ethernet configuration, USB
+                            snapshot
+                            backups, and workspace branding.</li>
+                    </ul>
+                    <div class="media-section">
+                        <h4>Live Demo</h4>
 
-            <p><strong>Solution:</strong></p>
-            <p>
-                I designed and built ChangeFlow as a configurable workflow engine where requests move through defined
-                states
-                (submit → review → approve → implement → close), with strict role-based permissions, automated routing,
-                and event-driven notifications.
-            </p>
+                        <div style="margin-top: 10px;">
+                            <iframe width="100%" height="315"
+                                src="https://www.youtube.com/embed/CuA192qt08Y?autoplay=1&mute=1&loop=1&playlist=CuA192qt08Y"
+                                title="Libraforge Demo" frameborder="0" allow="autoplay; encrypted-media"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
 
-            <p><strong>Full-Stack Scope:</strong></p>
-            <ul>
-                <li>Angular front-end application with dynamic workflow UI</li>
-                <li>Node.js / Express middleware API layer</li>
-                <li>Cloud Firestore data modeling for workflow state and history</li>
-                <li>Notification system (email + optional SMS/push)</li>
-                <li>Authentication and role-based authorization system</li>
-            </ul>
-
-            <h4>Core Platform Capabilities</h4>
-            <ul>
-                <li><strong>State-Based Workflow Engine:</strong> Requests move through controlled states with enforced
-                    transitions</li>
-                <li><strong>Role-Based Routing:</strong> Only authorized users can approve or act at each stage</li>
-                <li><strong>Audit Trail:</strong> Full history of actions, timestamps, and decisions</li>
-                <li><strong>Configurable Workflows:</strong> Supports permanent, temporary, and urgent change types</li>
-                <li><strong>Time-Based Logic:</strong> Automatic reminders and expiration handling for temporary changes
-                </li>
-                <li><strong>Notification System:</strong> Email + optional SMS/push for critical events</li>
-                <li><strong>Searchable History:</strong> All requests are queryable and reportable</li>
-            </ul>
-
-            <h4>API & Backend Design (Key Engineering Depth)</h4>
-            <ul>
-                <li>REST-style API endpoints for workflow operations, approvals, and reporting</li>
-                <li>Middleware layer handling validation, routing logic, and permissions</li>
-                <li>Data models designed for state transitions and historical traceability</li>
-                <li>Integration-ready architecture for external systems and data sources</li>
-            </ul>
-
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Frontend:</strong> Angular, TypeScript, Bootstrap</li>
-                <li><strong>Backend:</strong> Node.js, Express.js</li>
-                <li><strong>Database:</strong> Cloud Firestore</li>
-                <li><strong>Hosting:</strong> Firebase Hosting & Functions</li>
-            </ul>
-
-            <h4>Visual Overview</h4>
-            <div class="video-container" style="position: relative;">
-                <video muted autoplay loop playsinline preload="auto" style="width: 100%; display: block;">
-                    <source src="/assets/placeholder_720_h264.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                        <p>
+                            <a href="https://youtu.be/CuA192qt08Y" target="_blank">
+                                ▶ Watch on YouTube
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://libraforge.com/" target="_blank">
+                                🌐 View Libraforge Product Site
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </div>
+        </details>
+        <details class="project-detail-toggle" id="changeflow-details">
+            <summary>ChangeFlow™ — Detailed Project View</summary>
+            <div class="project-detail-inner">
+                <div class="project project-dark">
+                    <h3>ChangeFlow™ - Workflow, Approval & Operational Change Platform</h3>
 
-            <h4>Live Product</h4>
-            <p>
-                <a href="https://changeflow.ind-docs.app" target="_blank">
-                    🌐 View ChangeFlow Application
-                </a>
-            </p>
-            <p>
-                <a href="https://changeflow.ind-docs.app/trial" target="_blank">
-                    ▶ Start Free Trial
-                </a>
-            </p>
-        </div>
+                    <p><strong>This is a full-stack, production-grade workflow engine designed for real operational
+                            environments—not a demo app.</strong></p>
 
-        <div class="project project-dark">
-            <h3>Communications, Control & Real-Time Media Platform</h3>
+                    <p>
+                        ChangeFlow™ is a configurable workflow and approval platform built to control, track, and audit
+                        operational change across departments.
+                        It replaces fragmented, paper-based, and email-driven processes with a structured, rule-driven
+                        system
+                        that enforces accountability
+                        and provides full lifecycle visibility.
+                    </p>
 
-            <p><strong>This was not just a phone system—it was a distributed real-time communications and control platform integrating VoIP telephony, PLC-controlled physical systems, mobile HMIs, video, and traditional intercom infrastructure.</strong></p>
+                    <p><strong>Challenge:</strong></p>
+                    <ul>
+                        <li>Change requests handled via paper, email, or informal communication</li>
+                        <li>No reliable audit trail or searchable history</li>
+                        <li>Approvals dependent on physical presence or manual routing</li>
+                        <li>No enforcement of role-based authorization or qualification</li>
+                    </ul>
 
-            <p>
-                I designed and implemented a multi-layer operational system built around an Asterisk PBX on Debian Linux,
-                integrating Omron PLCs, legacy intercom amplifiers, desktop SIP phones, Wi-Fi VoIP devices,
-                handheld mobile HMIs running on constrained embedded hardware, Windows PCs, and live video feeds.
-                The system unified voice, control, and media so operators could communicate, open doors, select intercoms,
-                launch cameras, and interact with traditional infrastructure from modern IP endpoints.
-            </p>
+                    <p><strong>Solution:</strong></p>
+                    <p>
+                        I designed and built ChangeFlow as a configurable workflow engine where requests move through
+                        defined
+                        states
+                        (submit → review → approve → implement → close), with strict role-based permissions, automated
+                        routing,
+                        and event-driven notifications.
+                    </p>
 
-            <p><strong>System Architecture:</strong></p>
-            <ul>
-                <li><strong>Core PBX:</strong> Asterisk PBX on Debian Linux handling SIP call routing, dial scripts, and operational call flows</li>
-                <li><strong>Industrial Control Layer:</strong> Omron PLC integration for doors, intercom routing, push-to-talk signaling, and physical control actions</li>
-                <li><strong>Legacy System Bridging:</strong> Integration of traditional intercom infrastructure and control hardware into the IP telephony environment</li>
-                <li><strong>Endpoint Devices:</strong> Desktop SIP phones, Wi-Fi VoIP devices, Windows PCs, and handheld mobile HMIs built for constrained embedded hardware</li>
-                <li><strong>Video Layer:</strong> Live video support for both analog and IP cameras, including switching and streaming to handheld/operator interfaces</li>
-                <li><strong>Network Design:</strong> Segmented VLAN architecture separating PLC control, voice, video, and Asterisk/SIP services</li>
-            </ul>
+                    <p><strong>Full-Stack Scope:</strong></p>
+                    <ul>
+                        <li>Angular front-end application with dynamic workflow UI</li>
+                        <li>Node.js / Express middleware API layer</li>
+                        <li>Cloud Firestore data modeling for workflow state and history</li>
+                        <li>Notification system (email + optional SMS/push)</li>
+                        <li>Authentication and role-based authorization system</li>
+                    </ul>
 
-            <p><strong>Custom Software & Integration Work I Built:</strong></p>
-            <ul>
-                <li>Custom Asterisk dial scripts and call workflows for intercom, station, and device routing</li>
-                <li>Python Asterisk Manager Interface (AMI) server components and SIP endpoint logic</li>
-                <li>Custom Python SIP client software for desktop and handheld operator devices using PJSIP</li>
-                <li>Handheld control interfaces for selecting intercoms, opening doors, controlling lighting, and launching camera views</li>
-                <li>Push-to-talk logic tying joystick / hardware input, microphone state, and PLC signaling together in real time</li>
-                <li>Event-driven PHP middleware and daemon utilities bridging telephony events, database state, and PLC control actions</li>
-                <li>XML-driven SIP phone applications, including dynamic menus for doors and intercom-related functions</li>
-                <li>Web-based configuration utilities for telephony and related system setup</li>
-            </ul>
+                    <h4>Core Platform Capabilities</h4>
+                    <ul>
+                        <li><strong>State-Based Workflow Engine:</strong> Requests move through controlled states with
+                            enforced
+                            transitions</li>
+                        <li><strong>Role-Based Routing:</strong> Only authorized users can approve or act at each stage
+                        </li>
+                        <li><strong>Audit Trail:</strong> Full history of actions, timestamps, and decisions</li>
+                        <li><strong>Configurable Workflows:</strong> Supports permanent, temporary, and urgent change
+                            types</li>
+                        <li><strong>Time-Based Logic:</strong> Automatic reminders and expiration handling for temporary
+                            changes
+                        </li>
+                        <li><strong>Notification System:</strong> Email + optional SMS/push for critical events</li>
+                        <li><strong>Searchable History:</strong> All requests are queryable and reportable</li>
+                    </ul>
 
-            <p><strong>What Made It Technically Distinct:</strong></p>
-            <ul>
-                <li><strong>Telephony as Operational HMI:</strong> Both mobile handhelds and desk phones acted as control interfaces, not just voice endpoints</li>
-                <li><strong>Backend-to-Physical Control:</strong> Software workflows translated telephony and UI actions into PLC bit-level commands for doors, intercom selection, and signaling</li>
-                <li><strong>Protocol-Level Engineering:</strong> Built raw UDP packet generation, binary field parsing, and daemon-based event routing for PLC/control integration</li>
-                <li><strong>Closed-Loop Event Processing:</strong> Incoming field/control events were parsed, logged to the database, routed through Asterisk, and acknowledged back into the system state</li>
-                <li><strong>Cross-Domain Integration:</strong> Combined telephony, media streaming, networking, backend logic, mobile UI, desktop device UI, and industrial control into one coordinated platform</li>
-                <li><strong>Traditional + IP Bridging:</strong> Users could interact with traditional intercom infrastructure and even route communications from modern IP endpoints into legacy systems</li>
-            </ul>
+                    <h4>API & Backend Design (Key Engineering Depth)</h4>
+                    <ul>
+                        <li>REST-style API endpoints for workflow operations, approvals, and reporting</li>
+                        <li>Middleware layer handling validation, routing logic, and permissions</li>
+                        <li>Data models designed for state transitions and historical traceability</li>
+                        <li>Integration-ready architecture for external systems and data sources</li>
+                    </ul>
 
-            <p><strong>Representative Engineering Responsibilities:</strong></p>
-            <ul>
-                <li>Constructed and transmitted low-level PLC control packets over UDP for door and intercom actions</li>
-                <li>Built daemon-style PHP services that listened for control events, parsed packet fields by byte offset, and triggered database updates or Asterisk call generation</li>
-                <li>Programmatically pushed XML menus to desktop SIP phones, turning them into operational control terminals</li>
-                <li>Integrated custom video clients for handheld devices so operators could launch camera views from the same control interface used for voice and door/intercom actions</li>
-                <li>Used the language and runtime best suited to each subsystem: Python for SIP/media/PDA logic, PHP for telephony/device middleware, C++/Visual Studio for client-side multimedia components, and Linux/Asterisk for core call control</li>
-            </ul>
+                    <h4>Technology Stack</h4>
+                    <ul>
+                        <li><strong>Frontend:</strong> Angular, TypeScript, Bootstrap</li>
+                        <li><strong>Backend:</strong> Node.js, Express.js</li>
+                        <li><strong>Database:</strong> Cloud Firestore</li>
+                        <li><strong>Hosting:</strong> Firebase Hosting & Functions</li>
+                    </ul>
 
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Core Systems:</strong> Asterisk PBX, Debian Linux, Omron PLC integration, traditional intercom/control hardware, SIP/RTP</li>
-                <li><strong>Languages & Runtime:</strong> Python, PHP, C++, Bash scripting</li>
-                <li><strong>Endpoint / Client Development:</strong> Visual Studio, embedded client development, custom PJSIP-based SIP clients, and handheld operator interfaces</li>
-                <li><strong>Web & Backend:</strong> Apache, PHP, MySQL, telephony middleware, XML phone applications</li>
-                <li><strong>Media:</strong> Custom streaming video client integration built on VideoLAN / VLC libraries</li>
-                <li><strong>Networking:</strong> VLAN-based architecture for control, voice, video, and PBX traffic</li>
-            </ul>
+                    <h4>Visual Overview</h4>
+                    <div class="video-container" style="position: relative;">
+                        <video muted autoplay loop playsinline preload="auto" style="width: 100%; display: block;">
+                            <source src="/assets/placeholder_720_h264.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
 
-            <div class="media-section">
-                <h4>Architecture & Mobile Control Interface</h4>
-                <img src="assets/pdaControl.webp" alt="VoIP, control, and PDA interface architecture" style="width: 100%; max-width: 800px;"
-                    onclick="openLightbox(this.src)">
+                    <h4>Live Product</h4>
+                    <p>
+                        <a href="https://changeflow.ind-docs.app" target="_blank">
+                            🌐 View ChangeFlow Application
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://changeflow.ind-docs.app/trial" target="_blank">
+                            ▶ Start Free Trial
+                        </a>
+                    </p>
+                </div>
             </div>
+        </details>
+        <details class="project-detail-toggle" id="comms-details">
+            <summary>Communications, Control & Real-Time Media Platform — Detailed Project View</summary>
+            <div class="project-detail-inner">
+                <div class="project project-dark">
+                    <h3>Communications, Control & Real-Time Media Platform</h3>
 
-            <h4>Representative Code Snippets</h4>
-            <p>These excerpts highlight low-level protocol handling, real-time control, and cross-system integration.</p>
+                    <p><strong>This was not just a phone system—it was a distributed real-time communications and
+                            control
+                            platform integrating VoIP telephony, PLC-controlled physical systems, mobile HMIs, video,
+                            and
+                            traditional intercom infrastructure.</strong></p>
 
-            <p><strong>Real-time PLC push-to-talk signaling from the handheld operator client:</strong></p>
-            <pre><code>
+                    <p>
+                        I designed and implemented a multi-layer operational system built around an Asterisk PBX on
+                        Debian
+                        Linux, integrating Omron PLCs, legacy intercom amplifiers, desktop SIP phones, Wi-Fi VoIP
+                        devices,
+                        handheld mobile HMIs running on constrained embedded hardware, Windows PCs, and real-time
+                        control
+                        interfaces. The system unified voice, control, and signaling so operators could communicate,
+                        open doors,
+                        select intercoms, control lighting, and interact with traditional infrastructure from modern IP
+                        endpoints.
+                    </p>
+
+                    <p><strong>System Architecture:</strong></p>
+                    <ul>
+                        <li><strong>Core PBX:</strong> Asterisk PBX on Debian Linux handling SIP call routing, dial
+                            scripts, and
+                            operational call flows</li>
+                        <li><strong>Industrial Control Layer:</strong> Omron PLC integration for doors, intercom
+                            routing,
+                            push-to-talk signaling, and physical control actions</li>
+                        <li><strong>Legacy System Bridging:</strong> Integration of traditional intercom infrastructure
+                            and
+                            control hardware into the IP telephony environment</li>
+                        <li><strong>Endpoint Devices:</strong> Desktop SIP phones, Wi-Fi VoIP devices, Windows PCs, and
+                            handheld
+                            mobile HMIs built for constrained embedded hardware</li>
+                        <li><strong>Operator Interface Layer:</strong> Real-time control interfaces for desktop and
+                            handheld endpoints, including door, intercom, signaling, and lighting actions</li>
+                        <li><strong>Network Design:</strong> Segmented VLAN architecture separating PLC control, voice,
+                            video,
+                            and Asterisk/SIP services</li>
+                    </ul>
+
+                    <p><strong>Custom Software & Integration Work I Built:</strong></p>
+                    <ul>
+                        <li>Custom Asterisk dial scripts and call workflows for intercom, station, and device routing
+                        </li>
+                        <li>Python Asterisk Manager Interface (AMI) server components and SIP endpoint logic</li>
+                        <li>Custom Python SIP client software for desktop and handheld operator devices using PJSIP</li>
+                        <li>Handheld control interfaces for selecting intercoms, opening doors, controlling lighting,
+                            and
+                            launching camera views</li>
+                        <li>Push-to-talk logic tying joystick / hardware input, microphone state, and PLC signaling
+                            together in
+                            real time</li>
+                        <li>Event-driven PHP middleware and daemon utilities bridging telephony events, database state,
+                            and PLC
+                            control actions</li>
+                        <li>XML-driven SIP phone applications, including dynamic menus for doors and intercom-related
+                            functions
+                        </li>
+                        <li>Web-based configuration utilities for telephony and related system setup</li>
+                    </ul>
+
+                    <p><strong>What Made It Technically Distinct:</strong></p>
+                    <ul>
+                        <li><strong>Telephony as Operational HMI:</strong> Both mobile handhelds and desk phones acted
+                            as
+                            control interfaces, not just voice endpoints</li>
+                        <li><strong>Backend-to-Physical Control:</strong> Software workflows translated telephony and UI
+                            actions
+                            into PLC bit-level commands for doors, intercom selection, and signaling</li>
+                        <li><strong>Protocol-Level Engineering:</strong> Built raw UDP packet generation, binary field
+                            parsing,
+                            and daemon-based event routing for PLC/control integration</li>
+                        <li><strong>Closed-Loop Event Processing:</strong> Incoming field/control events were parsed,
+                            logged to
+                            the database, routed through Asterisk, and acknowledged back into the system state</li>
+                        <li><strong>Cross-Domain Integration:</strong> Combined telephony, media streaming, networking,
+                            backend
+                            logic, mobile UI, desktop device UI, and industrial control into one coordinated platform
+                        </li>
+                        <li><strong>Traditional + IP Bridging:</strong> Users could interact with traditional intercom
+                            infrastructure and even route communications from modern IP endpoints into legacy systems
+                        </li>
+                    </ul>
+
+                    <p><strong>Representative Engineering Responsibilities:</strong></p>
+                    <ul>
+                        <li>Constructed and transmitted low-level PLC control packets over UDP for door and intercom
+                            actions
+                        </li>
+                        <li>Built daemon-style PHP services that listened for control events, parsed packet fields by
+                            byte
+                            offset, and triggered database updates or Asterisk call generation</li>
+                        <li>Programmatically pushed XML menus to desktop SIP phones, turning them into operational
+                            control
+                            terminals</li>
+                        <li>Built handheld and desktop control workflows so operators could trigger door, intercom,
+                            signaling, and related control actions from the same communications platform</li>
+                        <li>Used the language and runtime best suited to each subsystem: Python for SIP/media/PDA logic,
+                            PHP for
+                            telephony/device middleware, C++/Visual Studio for client-side multimedia components, and
+                            Linux/Asterisk for core call control</li>
+                    </ul>
+
+                    <h4>Technology Stack</h4>
+                    <ul>
+                        <li><strong>Core Systems:</strong> Asterisk PBX, Debian Linux, Omron PLC integration,
+                            traditional
+                            intercom/control hardware, SIP/RTP</li>
+                        <li><strong>Languages & Runtime:</strong> Python, PHP, C++, Bash scripting</li>
+                        <li><strong>Endpoint / Client Development:</strong> Visual Studio, Windows CE embedded
+                            application development, custom PJSIP-based SIP clients, ActiveX video components, and
+                            handheld operator HMIs</li>
+                        <li><strong>Web & Backend:</strong> Apache, PHP, MySQL, telephony middleware, XML phone
+                            applications
+                        </li>
+                        <li><strong>Control & Integration:</strong> Raw UDP control messaging, binary packet
+                            construction/parsing, XML device interfaces, and daemon-style middleware services</li>
+                        <li><strong>Networking:</strong> VLAN-based architecture for control, voice, video, and PBX
+                            traffic</li>
+                    </ul>
+
+                    <div class="media-section">
+                        <h4>Architecture & Mobile Control Interface</h4>
+                        <img src="assets/pdaControl.webp" alt="VoIP, control, and PDA interface architecture"
+                            style="width: 100%; max-width: 800px;" onclick="openLightbox(this.src)">
+                    </div>
+
+                    <h4>Representative Code Snippets</h4>
+                    <p>These excerpts highlight low-level protocol handling, real-time control, and cross-system
+                        integration.
+                    </p>
+
+                    <p><strong>Real-time PLC push-to-talk signaling from the handheld operator client:</strong></p>
+                    <pre><code>
 // Python: PLC Push-To-Talk UDP Packet (real-time control from PDA)
 sendstring = ('\x81\x00\x02%c%c%c\x01\x01\x00\x01\x23\x01\x00\x01\x80%c\x30%c%c%c' %
     (int(pttdict['PLCNET']),
@@ -337,8 +563,8 @@ sendstring = ('\x81\x00\x02%c%c%c\x01\x01\x00\x01\x23\x01\x00\x01\x80%c\x30%c%c%
 sendSock.sendto(sendstring, plcaddr)
             </code></pre>
 
-            <p><strong>Custom SIP client logic for auto-answer and audio routing using PJSIP:</strong></p>
-            <pre><code>
+                    <p><strong>Custom SIP client logic for auto-answer and audio routing using PJSIP:</strong></p>
+                    <pre><code>
 // Python: SIP Client Auto-Answer + Audio Routing (PJSIP)
 def pjsua_app_client_on_incoming_call(acc_id, call_id, rdata):
     if pjsua_app.g_current_call != py_pjsua.PJSUA_INVALID_ID:
@@ -350,8 +576,8 @@ def pjsua_app_client_on_incoming_call(acc_id, call_id, rdata):
     py_pjsua.adjust_tx_level(0, float(gl_txLevel))
             </code></pre>
 
-            <p><strong>Daemon-style PHP middleware parsing raw UDP control packets by byte offset:</strong></p>
-            <pre><code>
+                    <p><strong>Daemon-style PHP middleware parsing raw UDP control packets by byte offset:</strong></p>
+                    <pre><code>
 // PHP: PLC Daemon Parsing Raw UDP Packet by Byte Offset
 $icString = rtrim(substr($buf, WORD_WRITE_CODE_START,
     (WORD_WRITE_CODE_END+1) - WORD_WRITE_CODE_START));
@@ -364,8 +590,8 @@ if (strncmp("ICCI", $icString, 4) == 0) {
 }
             </code></pre>
 
-            <p><strong>Asterisk call-file generation used to trigger intercom call workflows:</strong></p>
-            <pre><code>
+                    <p><strong>Asterisk call-file generation used to trigger intercom call workflows:</strong></p>
+                    <pre><code>
 // PHP: Asterisk Call File Generation (triggering intercom call)
 $callstring  = "Channel: SIP/".$masterNum."\r\n";
 $callstring .= "WaitTime: 30\r\n";
@@ -376,168 +602,207 @@ $callstring .= "Priority: 1\r\n";
 file_put_contents("/var/spool/asterisk/outgoing/mydial", $callstring);
             </code></pre>
 
-            <p><strong>Binary packet construction for direct PLC bit-level control over UDP:</strong></p>
-            <pre><code>
+                    <p><strong>Binary packet construction for direct PLC bit-level control over UDP:</strong></p>
+                    <pre><code>
 // PHP: Binary Packet Construction for PLC Bit Control
 $mypacket = pac
             </code></pre>
-        </div>
-
-        <div class="project project-dark">
-            <h3>Industrial Power Monitoring & Data Acquisition Platform</h3>
-
-            <p><strong>This system represents a full-stack industrial data pipeline—from field devices to
-                    analytics.</strong></p>
-
-            <p>
-                I designed and built a complete power monitoring and analytics platform that directly interfaces with
-                industrial meters and PLCs using native protocols including Modbus TCP and Ethernet/IP (CIP).
-                The system collects, processes, stores, and exposes energy data for reporting, visualization,
-                and operational decision-making.
-            </p>
-
-            <p><strong>Challenge:</strong></p>
-            <ul>
-                <li>Legacy system relied on multiple versions of Kepware with limited device support</li>
-                <li>No unified data model across different meter types and protocols</li>
-                <li>Inability to calculate plant-specific metrics such as specific power consumption</li>
-                <li>No flexible or queryable historical data for reporting</li>
-            </ul>
-
-            <p><strong>Solution:</strong></p>
-            <p>
-                I replaced the legacy system with a custom-built data acquisition platform that communicates directly
-                with
-                field devices, normalizes data across protocols, and stores time-series data in MongoDB for real-time
-                and historical analysis.
-            </p>
-
-            <h4>System Architecture</h4>
-            <ul>
-                <li><strong>Data Acquisition Layer:</strong> Node.js service performing direct Modbus TCP and CIP reads
-                    from meters and PLCs</li>
-                <li><strong>Protocol Handling:</strong> Custom register parsing (16-bit, 32-bit, endian-aware) and CIP
-                    assembly decoding</li>
-                <li><strong>Processing Layer:</strong> Normalization, scaling, and timestamping of raw field data</li>
-                <li><strong>Storage:</strong> MongoDB time-series style collections for high-frequency logging</li>
-                <li><strong>API Layer:</strong> Express-based REST API for querying, aggregation, and reporting</li>
-                <li><strong>Frontend:</strong> Angular dashboard with Material UI for visualization and analysis</li>
-            </ul>
-
-            <h4>Key Engineering Highlights</h4>
-            <ul>
-                <li><strong>Direct Industrial Communication:</strong>
-                    Implemented native Modbus TCP socket communication and Ethernet/IP (CIP) reads without relying on
-                    middleware.
-                </li>
-                <li><strong>Custom Data Parsing:</strong>
-                    Built endian-aware register decoding (UInt16/UInt32, BE/LE) and structured tag mapping for
-                    heterogeneous devices.
-                </li>
-                <li><strong>CIP Assembly Processing:</strong>
-                    Parsed raw assembly buffers from power meters into structured engineering values using custom
-                    classes.
-                </li>
-                <li><strong>Multi-Source Data Integration:</strong>
-                    Combined field data with externally scraped data (Puppeteer) to compute derived metrics.
-                </li>
-                <li><strong>Time-Series Analytics:</strong>
-                    Designed MongoDB aggregation pipelines for usage calculations, deltas, and reporting over time
-                    ranges.
-                </li>
-                <li><strong>Scalable Tag System:</strong>
-                    Dynamic tag configuration stored in database enabling flexible expansion without code changes.
-                </li>
-            </ul>
-
-            <h4>API Capabilities</h4>
-            <ul>
-                <li>Query historical tag data with pagination</li>
-                <li>Calculate energy usage over time windows</li>
-                <li>Aggregate consumption across meters and locations</li>
-                <li>Provide real-time and historical datasets to frontend dashboards</li>
-            </ul>
-
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Backend:</strong> Node.js, Express, native TCP sockets</li>
-                <li><strong>Protocols:</strong> Modbus TCP, Ethernet/IP (CIP)</li>
-                <li><strong>Database:</strong> MongoDB (time-series style usage)</li>
-                <li><strong>Frontend:</strong> Angular, Material Design</li>
-                <li><strong>Data Collection:</strong> Custom polling engine with async/await orchestration</li>
-                <li><strong>Web Scraping:</strong> Puppeteer for external data integration</li>
-            </ul>
-
-            <p><strong>Outcome:</strong></p>
-            <p>
-                The system replaced legacy middleware, provided real-time visibility into plant energy usage,
-                enabled advanced reporting, and created a flexible platform for future expansion of industrial data
-                collection.
-            </p>
-
-            <div class="media-section">
-                <h4>System Demo</h4>
-                <video autoplay muted loop playsinline style="width: 100%; max-width: 800px;">
-                    <source src="assets/pm6500.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                </div>
             </div>
-        </div>
+        </details>
+        <details class="project-detail-toggle" id="power-details">
+            <summary>Industrial Power Monitoring & Data Acquisition Platform — Detailed Project View</summary>
+            <div class="project-detail-inner">
+                <div class="project project-dark">
+                    <h3>Industrial Power Monitoring & Data Acquisition Platform</h3>
 
-        <div class="project project-light">
-            <h3>Automated Documenting ControlLogix PLC Functional Descriptions</h3>
-            <p>Developed a series of Node.js scripts to document and validate ControlLogix PLC functional descriptions,
-                translating complex PLC logic into understandable formats.</p>
+                    <p><strong>This system represents a full-stack industrial data pipeline—from field devices to
+                            analytics.</strong></p>
 
-            <p><strong>Challenge:</strong> Updating functional descriptions after 15 years of changes across
-                approximately 50 PLCs, and validating settings against best practices, all while making the information
-                comprehensible for users who cannot evaluate PLC rungs directly.</p>
+                    <p>
+                        I designed and built a complete power monitoring and analytics platform that directly interfaces
+                        with
+                        industrial meters and PLCs using native protocols including Modbus TCP and Ethernet/IP (CIP).
+                        The system collects, processes, stores, and exposes energy data for reporting, visualization,
+                        and operational decision-making.
+                    </p>
 
-            <p><strong>Solution:</strong></p>
-            <ul>
-                <li><strong>ControlLogix PLC to Boolean Expressions:</strong> Exported ControlLogix L5K programs and
-                    built a Node.js parser that converts ladder and instruction patterns into normalized boolean
-                    expressions, creating a machine-readable intermediate representation for validation, documentation,
-                    and downstream AI-assisted translation.</li>
-                <li><strong>Boolean Expression to Structured Natural Language (AI-Assisted):</strong>
-                    Developed a prompt-engineered transformation pipeline using the OpenAI API to convert PLC boolean
-                    logic into structured, human-readable documentation and flow representations.
-
-                    Key aspects of the implementation:
+                    <p><strong>Challenge:</strong></p>
                     <ul>
-                        <li><strong>Domain-aware preprocessing:</strong> Injected tag-to-description mappings and
-                            normalized PLC expressions prior to inference to improve accuracy and consistency.</li>
-                        <li><strong>Deterministic prompt design:</strong> Engineered prompts with strict instructions
-                            (evaluation order, AND/OR semantics, nested logic handling) to ensure repeatable outputs
-                            suitable for engineering documentation.</li>
-                        <li><strong>Structured output enforcement:</strong> Required consistent dual-output format
-                            including <em>Plain English Explanation</em> and <em>Textual Flowchart</em> for both
-                            validation and usability.</li>
-                        <li><strong>Logic-preserving translation:</strong> Designed prompts to maintain execution
-                            semantics including grouping, branching, and sequential logic.</li>
-                        <li><strong>Pipeline integration:</strong> Integrated AI-generated outputs into a Node.js
-                            processing workflow for large-scale PLC documentation and validation.</li>
+                        <li>Legacy system relied on multiple versions of Kepware with limited device support</li>
+                        <li>No unified data model across different meter types and protocols</li>
+                        <li>Inability to calculate plant-specific metrics such as specific power consumption</li>
+                        <li>No flexible or queryable historical data for reporting</li>
                     </ul>
-                </li>
-                <li><strong>Document Alarm Values ControlLogix PLC:</strong> Created a Node.js script to extract digital
-                    and analog alarm block parameters from ControlLogix exported files, simplifying the documentation
-                    and validation process for a large set of alarms.</li>
-            </ul>
 
-            <p><strong>Outcome:</strong> The combined efforts allowed for accurate documentation, validation, and
-                explanation of complex PLC code, making it accessible and understandable for end users. This streamlined
-                the process of updating and validating the PLC functional descriptions.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>
+                        I replaced the legacy system with a custom-built data acquisition platform that communicates
+                        directly
+                        with
+                        field devices, normalizes data across protocols, and stores time-series data in MongoDB for
+                        real-time
+                        and historical analysis.
+                    </p>
 
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Frontend:</strong> MS Excel,VBA</li>
-                <li><strong>Backend:</strong> Node.js, regex-based parsing, OpenAI API integration</li>
-            </ul>
-            <p><strong>Example Code:</strong> The snippets below show the workflow from exported ControlLogix logic
-                parsing, to boolean expression generation, to prompt-engineered AI translation into structured
-                documentation.</p>
+                    <h4>System Architecture</h4>
+                    <ul>
+                        <li><strong>Data Acquisition Layer:</strong> Node.js service performing direct Modbus TCP and
+                            CIP reads
+                            from meters and PLCs</li>
+                        <li><strong>Protocol Handling:</strong> Custom register parsing (16-bit, 32-bit, endian-aware)
+                            and CIP
+                            assembly decoding</li>
+                        <li><strong>Processing Layer:</strong> Normalization, scaling, and timestamping of raw field
+                            data</li>
+                        <li><strong>Storage:</strong> MongoDB time-series style collections for high-frequency logging
+                        </li>
+                        <li><strong>API Layer:</strong> Express-based REST API for querying, aggregation, and reporting
+                        </li>
+                        <li><strong>Frontend:</strong> Angular dashboard with Material UI for visualization and analysis
+                        </li>
+                    </ul>
 
-            <pre><code>
+                    <h4>Key Engineering Highlights</h4>
+                    <ul>
+                        <li><strong>Direct Industrial Communication:</strong>
+                            Implemented native Modbus TCP socket communication and Ethernet/IP (CIP) reads without
+                            relying on
+                            middleware.
+                        </li>
+                        <li><strong>Custom Data Parsing:</strong>
+                            Built endian-aware register decoding (UInt16/UInt32, BE/LE) and structured tag mapping for
+                            heterogeneous devices.
+                        </li>
+                        <li><strong>CIP Assembly Processing:</strong>
+                            Parsed raw assembly buffers from power meters into structured engineering values using
+                            custom
+                            classes.
+                        </li>
+                        <li><strong>Multi-Source Data Integration:</strong>
+                            Combined field data with externally scraped data (Puppeteer) to compute derived metrics.
+                        </li>
+                        <li><strong>Time-Series Analytics:</strong>
+                            Designed MongoDB aggregation pipelines for usage calculations, deltas, and reporting over
+                            time
+                            ranges.
+                        </li>
+                        <li><strong>Scalable Tag System:</strong>
+                            Dynamic tag configuration stored in database enabling flexible expansion without code
+                            changes.
+                        </li>
+                    </ul>
+
+                    <h4>API Capabilities</h4>
+                    <ul>
+                        <li>Query historical tag data with pagination</li>
+                        <li>Calculate energy usage over time windows</li>
+                        <li>Aggregate consumption across meters and locations</li>
+                        <li>Provide real-time and historical datasets to frontend dashboards</li>
+                    </ul>
+
+                    <h4>Technology Stack</h4>
+                    <ul>
+                        <li><strong>Backend:</strong> Node.js, Express, native TCP sockets</li>
+                        <li><strong>Protocols:</strong> Modbus TCP, Ethernet/IP (CIP)</li>
+                        <li><strong>Database:</strong> MongoDB (time-series style usage)</li>
+                        <li><strong>Frontend:</strong> Angular, Material Design</li>
+                        <li><strong>Data Collection:</strong> Custom polling engine with async/await orchestration</li>
+                        <li><strong>Web Scraping:</strong> Puppeteer for external data integration</li>
+                    </ul>
+
+                    <p><strong>Outcome:</strong></p>
+                    <p>
+                        The system replaced legacy middleware, provided real-time visibility into plant energy usage,
+                        enabled advanced reporting, and created a flexible platform for future expansion of industrial
+                        data
+                        collection.
+                    </p>
+
+                    <div class="media-section">
+                        <h4>System Demo</h4>
+                        <video autoplay muted loop playsinline style="width: 100%; max-width: 800px;">
+                            <source src="assets/pm6500.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <details class="project-detail-toggle" id="plc-docs-details">
+            <summary>Automated Documenting ControlLogix PLC Functional Descriptions — Detailed Project View</summary>
+            <div class="project-detail-inner">
+                <div class="project project-light">
+                    <h3>Automated Documenting ControlLogix PLC Functional Descriptions</h3>
+                    <p>Developed a series of Node.js scripts to document and validate ControlLogix PLC functional
+                        descriptions,
+                        translating complex PLC logic into understandable formats.</p>
+
+                    <p><strong>Challenge:</strong> Updating functional descriptions after 15 years of changes across
+                        approximately 50 PLCs, and validating settings against best practices, all while making the
+                        information
+                        comprehensible for users who cannot evaluate PLC rungs directly.</p>
+
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li><strong>ControlLogix PLC to Boolean Expressions:</strong> Exported ControlLogix L5K programs
+                            and
+                            built a Node.js parser that converts ladder and instruction patterns into normalized boolean
+                            expressions, creating a machine-readable intermediate representation for validation,
+                            documentation,
+                            and downstream AI-assisted translation.</li>
+                        <li><strong>Boolean Expression to Structured Natural Language (AI-Assisted):</strong>
+                            Developed a prompt-engineered transformation pipeline using the OpenAI API to convert PLC
+                            boolean
+                            logic into structured, human-readable documentation and flow representations.
+
+                            Key aspects of the implementation:
+                            <ul>
+                                <li><strong>Domain-aware preprocessing:</strong> Injected tag-to-description mappings
+                                    and
+                                    normalized PLC expressions prior to inference to improve accuracy and consistency.
+                                </li>
+                                <li><strong>Deterministic prompt design:</strong> Engineered prompts with strict
+                                    instructions
+                                    (evaluation order, AND/OR semantics, nested logic handling) to ensure repeatable
+                                    outputs
+                                    suitable for engineering documentation.</li>
+                                <li><strong>Structured output enforcement:</strong> Required consistent dual-output
+                                    format
+                                    including <em>Plain English Explanation</em> and <em>Textual Flowchart</em> for both
+                                    validation and usability.</li>
+                                <li><strong>Logic-preserving translation:</strong> Designed prompts to maintain
+                                    execution
+                                    semantics including grouping, branching, and sequential logic.</li>
+                                <li><strong>Pipeline integration:</strong> Integrated AI-generated outputs into a
+                                    Node.js
+                                    processing workflow for large-scale PLC documentation and validation.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Document Alarm Values ControlLogix PLC:</strong> Created a Node.js script to extract
+                            digital
+                            and analog alarm block parameters from ControlLogix exported files, simplifying the
+                            documentation
+                            and validation process for a large set of alarms.</li>
+                    </ul>
+
+                    <p><strong>Outcome:</strong> The combined efforts allowed for accurate documentation, validation,
+                        and
+                        explanation of complex PLC code, making it accessible and understandable for end users. This
+                        streamlined
+                        the process of updating and validating the PLC functional descriptions.</p>
+
+                    <h4>Technology Stack</h4>
+                    <ul>
+                        <li><strong>Frontend:</strong> MS Excel,VBA</li>
+                        <li><strong>Backend:</strong> Node.js, regex-based parsing, OpenAI API integration</li>
+                    </ul>
+                    <p><strong>Example Code:</strong> The snippets below show the workflow from exported ControlLogix
+                        logic
+                        parsing, to boolean expression generation, to prompt-engineered AI translation into structured
+                        documentation.</p>
+
+                    <pre><code>
         // Parse exported L5K logic and normalize adjacent conditions into explicit boolean form
         line = line.replace(/(\w+\[\d+\]\.\w+\[\d+\]\.\d+)\s+(?=\w+\[\d+\]\.\w+\[\d+\]\.\d+)/g, '$1 AND ');
 
@@ -608,104 +873,180 @@ $mypacket = pac
           });
         }
             </code></pre>
-        </div>
-
-        <div class="project project-light">
-            <!-- <section id="distributed-control"> -->
-            <h3>Distributed Control Programming Environment</h3>
-            <p><strong>This project represents a core example of my distributed embedded systems work.</strong></p>
-            <p>This system was built on LonWorks-based distributed microcontroller nodes communicating over twisted pair
-                networks.</p>
-            <p>The distributed programming environment is built around a network of LonWorks microcontroller nodes
-                connected via a twisted pair network. These nodes form the backbone of a building control network,
-                commonly deployed in environments such as correctional facilities and courthouses. Each node within this
-                system is equipped to monitor inputs and control outputs, facilitating automated tasks such as
-                monitoring door positions, controlling door mechanisms, and managing intercom connections.</p>
-
-            <h3>Drag-and-Drop Programming Interface</h3>
-            <p>The software developed for this system offers a drag-and-drop programming interface, enabling intuitive
-                and efficient programming of the distributed nodes. Users can place icons representing inputs, outputs,
-                and actions within a hierarchical tree structure. This tree structure directly maps to the input and
-                output conditions available in the firmware of the nodes. By dropping an input or output state onto the
-                tree, the system automatically generates the corresponding code and inserts it into the node’s
-                descriptor table.</p>
-
-            <h3>Distributed Stack-Based Machine</h3>
-            <p>Each node in the network operates as a stack-based machine. The programming environment compiles the tree
-                structure into a series of instructions, with each node's descriptor table containing 10-byte
-                descriptors. These descriptors serve as stack entries, holding all the information needed to evaluate
-                and execute instructions. The descriptors are distributed across multiple nodes, enabling decentralized
-                control and coordination within the network.</p>
-
-            <h3>Execution and Control</h3>
-            <p>When executed, the code on each node processes its descriptors sequentially. Each descriptor not only
-                carries the operation to be performed but also the location of the next instruction. This setup allows
-                the distributed nodes to work collaboratively, executing a sequence of operations that span across the
-                network, thereby achieving distributed control.</p>
-
-            <p>This design enables scalable and robust automation, particularly in environments that require the
-                coordination of multiple control points across a large area. By leveraging the drag-and-drop interface,
-                even complex control sequences can be programmed efficiently, ensuring that the system can adapt to a
-                wide range of control tasks with minimal manual coding.</p>
-            <div class="media-section" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
-                <div style="flex: 1 1 320px; min-width: 280px;">
-                    <h4>Programming Environment</h4>
-                    <img src="assets/ioLogix.webp" alt="Programming Environment"
-                        style="width: 100%; max-width: 400px; display: block;" onclick="openLightbox(this.src)">
-                </div>
-                <div style="flex: 1 1 320px; min-width: 280px;">
-                    <h4>Documentation</h4>
-                    <img src="assets/ioLogixHelp.webp" alt="Documentation"
-                        style="width: 100%; max-width: 400px; display: block;" onclick="openLightbox(this.src)">
                 </div>
             </div>
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Frontend:</strong> Custom application using Borland C++ Builder with drag-and-drop
-                    interface.</li>
-                <li><strong>Backend:</strong> Neuron C for firmware development, stack-based machine implementation.
-                </li>
-                <li><strong>Networking:</strong> Distributed Lonworks microcontroller nodes.</li>
-                <li><strong>Additional Tools:</strong> Borland Database Engine for managing descriptor tables and state
-                    information.</li>
-            </ul>
-            <!-- </section> -->
-        </div>
+        </details>
+        <details class="project-detail-toggle" id="distributed-details">
+            <summary>Distributed Control Programming Environment — Detailed Project View</summary>
+            <div class="project-detail-inner">
+                <div class="project project-light">
+                    <!-- <section id="distributed-control"> -->
+                    <h3>Distributed Control Programming Environment</h3>
+                    <p><strong>This project represents a core example of my distributed embedded systems work.</strong>
+                    </p>
+                    <p>This system was built on LonWorks-based distributed microcontroller nodes communicating over
+                        twisted pair
+                        networks.</p>
+                    <p>The distributed programming environment is built around a network of LonWorks microcontroller
+                        nodes
+                        connected via a twisted pair network. These nodes form the backbone of a building control
+                        network,
+                        commonly deployed in environments such as correctional facilities and courthouses. Each node
+                        within this
+                        system is equipped to monitor inputs and control outputs, facilitating automated tasks such as
+                        monitoring door positions, controlling door mechanisms, and managing intercom connections.</p>
 
-        
+                    <h3>Drag-and-Drop Programming Interface</h3>
+                    <p>The software developed for this system offers a drag-and-drop programming interface, enabling
+                        intuitive
+                        and efficient programming of the distributed nodes. Users can place icons representing inputs,
+                        outputs,
+                        and actions within a hierarchical tree structure. This tree structure directly maps to the input
+                        and
+                        output conditions available in the firmware of the nodes. By dropping an input or output state
+                        onto the
+                        tree, the system automatically generates the corresponding code and inserts it into the node’s
+                        descriptor table.</p>
 
-        <div class="project project-dark">
-            <h3>Video Visitation System</h3>
-            <p>I designed and implemented a video visitation system that integrates Omron PLCs, Axis media servers, and
-                Indusoft HMI software. This system was developed to improve security and streamline operations in
-                correctional facilities, providing reliable video communication between inmates and visitors.</p>
-            <p>This system combined scheduling, database-backed visit management, live IP video, HMI interfaces, and PLC
-                integration into a unified operational platform for correctional facilities.</p>
-            <!-- <div class="media-section">
-                    <h4>Visit Setup Matrix</h4>
-                    <img src="assets/matrix.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
+                    <h3>Distributed Stack-Based Machine</h3>
+                    <p>Each node in the network operates as a stack-based machine. The programming environment compiles
+                        the tree
+                        structure into a series of instructions, with each node's descriptor table containing 10-byte
+                        descriptors. These descriptors serve as stack entries, holding all the information needed to
+                        evaluate
+                        and execute instructions. The descriptors are distributed across multiple nodes, enabling
+                        decentralized
+                        control and coordination within the network.</p>
+
+                    <h3>Execution and Control</h3>
+                    <p>When executed, the code on each node processes its descriptors sequentially. Each descriptor not
+                        only
+                        carries the operation to be performed but also the location of the next instruction. This setup
+                        allows
+                        the distributed nodes to work collaboratively, executing a sequence of operations that span
+                        across the
+                        network, thereby achieving distributed control.</p>
+
+                    <p>This design enables scalable and robust automation, particularly in environments that require the
+                        coordination of multiple control points across a large area. By leveraging the drag-and-drop
+                        interface,
+                        even complex control sequences can be programmed efficiently, ensuring that the system can adapt
+                        to a
+                        wide range of control tasks with minimal manual coding.</p>
+                    <div class="media-section"
+                        style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+                        <div style="flex: 1 1 320px; min-width: 280px;">
+                            <h4>Programming Environment</h4>
+                            <img src="assets/ioLogix.webp" alt="Programming Environment"
+                                style="width: 100%; max-width: 400px; display: block;" onclick="openLightbox(this.src)">
+                        </div>
+                        <div style="flex: 1 1 320px; min-width: 280px;">
+                            <h4>Documentation</h4>
+                            <img src="assets/ioLogixHelp.webp" alt="Documentation"
+                                style="width: 100%; max-width: 400px; display: block;" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <h4>Technology Stack</h4>
+                    <ul>
+                        <li><strong>Frontend:</strong> Custom application using Borland C++ Builder with drag-and-drop
+                            interface.</li>
+                        <li><strong>Backend:</strong> Neuron C for firmware development, stack-based machine
+                            implementation.
+                        </li>
+                        <li><strong>Networking:</strong> Distributed Lonworks microcontroller nodes.</li>
+                        <li><strong>Additional Tools:</strong> Borland Database Engine for managing descriptor tables
+                            and state
+                            information.</li>
+                    </ul>
+                    <!-- </section> -->
                 </div>
-                <div class="media-section">
-                    <h4>Visit Schedule</h4>
-                    <img src="assets/schedule.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
-                </div>
-                <div class="media-section">
-                    <h4>Video Conference</h4>
-                    <img src="assets/cam.webp" alt="voipphone" style="width: 50%; max-width: 400px;" onclick="openLightbox(this.src)">
-                </div> -->
-            <div class="media-section">
-                <h4>System Interface & Scheduling</h4>
-                <img src="assets/vidVis.webp" alt="Video visitation system" style="width: 100%; max-width: 800px;"
-                    onclick="openLightbox(this.src)">
             </div>
-            <h4>Technology Stack</h4>
-            <ul>
-                <li><strong>Frontend:</strong> JavaScript, ADO, HTML, Indusoft Web Studio for HMI.</li>
-                <li><strong>Backend:</strong> SQL Server integration, ActiveX controls for video display.</li>
-                <li><strong>Database:</strong> SQL Server.</li>
-                <li><strong>Additional Tools:</strong> PLC integration</li>
-            </ul>
-        </div>
+        </details>
+
+
+
+
+        <details class="project-detail-toggle" id="video-visitation-details">
+            <summary>Video Visitation System — Detailed Project View</summary>
+            <div class="project-detail-inner">
+                <div class="project project-dark">
+
+                    <h3>Video Visitation System</h3>
+
+                    <p><strong>This was a full operational system—not just video streaming, but scheduling, control, and
+                            real-time communication integrated into one platform.</strong></p>
+
+                    <p>
+                        I designed and implemented a video visitation system that integrated Omron PLCs, Axis media
+                        servers,
+                        Asterisk PBX, and Indusoft HMI software to enable secure, managed video communication between
+                        inmates
+                        and visitors.
+                    </p>
+
+                    <p>
+                        The system combined scheduling, database-backed visit management, live IP and analog video
+                        routing,
+                        SIP-based audio communication, and PLC-controlled physical infrastructure into a unified
+                        operational
+                        platform for correctional facilities.
+                    </p>
+
+                    <h4>System Architecture</h4>
+                    <ul>
+                        <li><strong>Scheduling & Management:</strong> SQL Server-backed visit scheduling and tracking
+                            system</li>
+                        <li><strong>Video Layer:</strong> Axis media servers and custom VLC ActiveX client for live
+                            streaming</li>
+                        <li><strong>Audio Communication:</strong> Asterisk PBX handling SIP-based voice connections</li>
+                        <li><strong>Control Layer:</strong> Omron PLCs managing physical routing, switching, and
+                            signaling</li>
+                        <li><strong>Operator Interface:</strong> Indusoft HMI and custom UI for managing visits and
+                            system state</li>
+                    </ul>
+
+                    <h4>Key Engineering Work</h4>
+                    <ul>
+                        <li>Built Windows CE client applications using C++ and Visual Studio for embedded operator
+                            devices</li>
+                        <li>Integrated VLC (VideoLAN) as a compiled ActiveX control for embedded video playback</li>
+                        <li>Implemented SIP audio using PJSIP for real-time voice communication</li>
+                        <li>Designed workflows tying scheduling → video routing → audio connection → PLC-controlled
+                            actions</li>
+                        <li>Bridged analog camera systems and IP cameras through Asterisk and video switching hardware
+                        </li>
+                    </ul>
+
+                    <h4>What Made It Distinct</h4>
+                    <ul>
+                        <li><strong>Full-stack physical system:</strong> software directly controlled real-world
+                            visitation infrastructure</li>
+                        <li><strong>Hybrid media integration:</strong> combined IP video, analog video, and VoIP audio
+                        </li>
+                        <li><strong>Embedded client engineering:</strong> custom PDA applications with integrated video
+                            and SIP</li>
+                        <li><strong>End-to-end workflow:</strong> scheduling, authentication, media, and control all
+                            unified</li>
+                    </ul>
+
+                    <div class="media-section">
+                        <h4>System Interface & Scheduling</h4>
+                        <img src="assets/vidVis.webp" alt="Video visitation system"
+                            style="width: 100%; max-width: 800px;" onclick="openLightbox(this.src)">
+                    </div>
+
+                    <h4>Technology Stack</h4>
+                    <ul>
+                        <li><strong>Frontend:</strong> JavaScript, HTML, Indusoft Web Studio (HMI)</li>
+                        <li><strong>Backend:</strong> SQL Server, PHP integration, Asterisk PBX</li>
+                        <li><strong>Client Development:</strong> C++, Visual Studio, Windows CE embedded apps</li>
+                        <li><strong>Media:</strong> VLC (ActiveX), Axis media servers, analog/IP camera integration</li>
+                        <li><strong>Control:</strong> Omron PLC integration for routing and physical control</li>
+                    </ul>
+
+                </div>
+            </div>
+        </details>
 
         <h2>Additional Systems and Engineering Experience</h2>
         <div class="project project-dark">
