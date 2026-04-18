@@ -250,6 +250,140 @@
         </div>
 
         <div class="project project-dark">
+            <h3>Communications, Control & Real-Time Media Platform</h3>
+
+            <p><strong>This was not just a phone system—it was a distributed real-time communications and control platform integrating VoIP telephony, PLC-controlled physical systems, mobile HMIs, video, and traditional intercom infrastructure.</strong></p>
+
+            <p>
+                I designed and implemented a multi-layer operational system built around an Asterisk PBX on Debian Linux,
+                integrating Omron PLCs, legacy intercom amplifiers, desktop SIP phones, Wi-Fi VoIP devices,
+                handheld mobile HMIs running on constrained embedded hardware, Windows PCs, and live video feeds.
+                The system unified voice, control, and media so operators could communicate, open doors, select intercoms,
+                launch cameras, and interact with traditional infrastructure from modern IP endpoints.
+            </p>
+
+            <p><strong>System Architecture:</strong></p>
+            <ul>
+                <li><strong>Core PBX:</strong> Asterisk PBX on Debian Linux handling SIP call routing, dial scripts, and operational call flows</li>
+                <li><strong>Industrial Control Layer:</strong> Omron PLC integration for doors, intercom routing, push-to-talk signaling, and physical control actions</li>
+                <li><strong>Legacy System Bridging:</strong> Integration of traditional intercom infrastructure and control hardware into the IP telephony environment</li>
+                <li><strong>Endpoint Devices:</strong> Desktop SIP phones, Wi-Fi VoIP devices, Windows PCs, and handheld mobile HMIs built for constrained embedded hardware</li>
+                <li><strong>Video Layer:</strong> Live video support for both analog and IP cameras, including switching and streaming to handheld/operator interfaces</li>
+                <li><strong>Network Design:</strong> Segmented VLAN architecture separating PLC control, voice, video, and Asterisk/SIP services</li>
+            </ul>
+
+            <p><strong>Custom Software & Integration Work I Built:</strong></p>
+            <ul>
+                <li>Custom Asterisk dial scripts and call workflows for intercom, station, and device routing</li>
+                <li>Python Asterisk Manager Interface (AMI) server components and SIP endpoint logic</li>
+                <li>Custom Python SIP client software for desktop and handheld operator devices using PJSIP</li>
+                <li>Handheld control interfaces for selecting intercoms, opening doors, controlling lighting, and launching camera views</li>
+                <li>Push-to-talk logic tying joystick / hardware input, microphone state, and PLC signaling together in real time</li>
+                <li>Event-driven PHP middleware and daemon utilities bridging telephony events, database state, and PLC control actions</li>
+                <li>XML-driven SIP phone applications, including dynamic menus for doors and intercom-related functions</li>
+                <li>Web-based configuration utilities for telephony and related system setup</li>
+            </ul>
+
+            <p><strong>What Made It Technically Distinct:</strong></p>
+            <ul>
+                <li><strong>Telephony as Operational HMI:</strong> Both mobile handhelds and desk phones acted as control interfaces, not just voice endpoints</li>
+                <li><strong>Backend-to-Physical Control:</strong> Software workflows translated telephony and UI actions into PLC bit-level commands for doors, intercom selection, and signaling</li>
+                <li><strong>Protocol-Level Engineering:</strong> Built raw UDP packet generation, binary field parsing, and daemon-based event routing for PLC/control integration</li>
+                <li><strong>Closed-Loop Event Processing:</strong> Incoming field/control events were parsed, logged to the database, routed through Asterisk, and acknowledged back into the system state</li>
+                <li><strong>Cross-Domain Integration:</strong> Combined telephony, media streaming, networking, backend logic, mobile UI, desktop device UI, and industrial control into one coordinated platform</li>
+                <li><strong>Traditional + IP Bridging:</strong> Users could interact with traditional intercom infrastructure and even route communications from modern IP endpoints into legacy systems</li>
+            </ul>
+
+            <p><strong>Representative Engineering Responsibilities:</strong></p>
+            <ul>
+                <li>Constructed and transmitted low-level PLC control packets over UDP for door and intercom actions</li>
+                <li>Built daemon-style PHP services that listened for control events, parsed packet fields by byte offset, and triggered database updates or Asterisk call generation</li>
+                <li>Programmatically pushed XML menus to desktop SIP phones, turning them into operational control terminals</li>
+                <li>Integrated custom video clients for handheld devices so operators could launch camera views from the same control interface used for voice and door/intercom actions</li>
+                <li>Used the language and runtime best suited to each subsystem: Python for SIP/media/PDA logic, PHP for telephony/device middleware, C++/Visual Studio for client-side multimedia components, and Linux/Asterisk for core call control</li>
+            </ul>
+
+            <h4>Technology Stack</h4>
+            <ul>
+                <li><strong>Core Systems:</strong> Asterisk PBX, Debian Linux, Omron PLC integration, traditional intercom/control hardware, SIP/RTP</li>
+                <li><strong>Languages & Runtime:</strong> Python, PHP, C++, Bash scripting</li>
+                <li><strong>Endpoint / Client Development:</strong> Visual Studio, embedded client development, custom PJSIP-based SIP clients, and handheld operator interfaces</li>
+                <li><strong>Web & Backend:</strong> Apache, PHP, MySQL, telephony middleware, XML phone applications</li>
+                <li><strong>Media:</strong> Custom streaming video client integration built on VideoLAN / VLC libraries</li>
+                <li><strong>Networking:</strong> VLAN-based architecture for control, voice, video, and PBX traffic</li>
+            </ul>
+
+            <div class="media-section">
+                <h4>Architecture & Mobile Control Interface</h4>
+                <img src="assets/pdaControl.webp" alt="VoIP, control, and PDA interface architecture" style="width: 100%; max-width: 800px;"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <h4>Representative Code Snippets</h4>
+            <p>These excerpts highlight low-level protocol handling, real-time control, and cross-system integration.</p>
+
+            <p><strong>Real-time PLC push-to-talk signaling from the handheld operator client:</strong></p>
+            <pre><code>
+// Python: PLC Push-To-Talk UDP Packet (real-time control from PDA)
+sendstring = ('\x81\x00\x02%c%c%c\x01\x01\x00\x01\x23\x01\x00\x01\x80%c\x30%c%c%c' %
+    (int(pttdict['PLCNET']),
+     int(pttdict['PLCNODE']),
+     int(pttdict['PLCUNIT']),
+     value,
+     int(pttdict['MEMAREA']) >> 8,
+     int(pttdict['MEMAREA']) & 0x00ff,
+     int(pttdict['MEMBIT'])))
+
+sendSock.sendto(sendstring, plcaddr)
+            </code></pre>
+
+            <p><strong>Custom SIP client logic for auto-answer and audio routing using PJSIP:</strong></p>
+            <pre><code>
+// Python: SIP Client Auto-Answer + Audio Routing (PJSIP)
+def pjsua_app_client_on_incoming_call(acc_id, call_id, rdata):
+    if pjsua_app.g_current_call != py_pjsua.PJSUA_INVALID_ID:
+        py_pjsua.call_hangup_all()
+        return
+
+    py_pjsua.call_answer(call_id, 200, None, None)
+    py_pjsua.adjust_rx_level(0, float(gl_rxLevel))
+    py_pjsua.adjust_tx_level(0, float(gl_txLevel))
+            </code></pre>
+
+            <p><strong>Daemon-style PHP middleware parsing raw UDP control packets by byte offset:</strong></p>
+            <pre><code>
+// PHP: PLC Daemon Parsing Raw UDP Packet by Byte Offset
+$icString = rtrim(substr($buf, WORD_WRITE_CODE_START,
+    (WORD_WRITE_CODE_END+1) - WORD_WRITE_CODE_START));
+
+if (strncmp("ICCI", $icString, 4) == 0) {
+    post2DB("ttechICSystem", "localhost", "", "", "iccallins",
+        "ipaddress,port,timestamp,master_num,ic_string,ic_num,ackword,ackbit",
+        "'$clientIP','$clientPort','".date('Y-m-d G:i:s')."',
+         '$masterNum','$icString','$icNum','$ackWord','$ackBit'");
+}
+            </code></pre>
+
+            <p><strong>Asterisk call-file generation used to trigger intercom call workflows:</strong></p>
+            <pre><code>
+// PHP: Asterisk Call File Generation (triggering intercom call)
+$callstring  = "Channel: SIP/".$masterNum."\r\n";
+$callstring .= "WaitTime: 30\r\n";
+$callstring .= "Context: MAST".$masterNum."\r\n";
+$callstring .= "Extension: 1".$icNum."\r\n";
+$callstring .= "Priority: 1\r\n";
+
+file_put_contents("/var/spool/asterisk/outgoing/mydial", $callstring);
+            </code></pre>
+
+            <p><strong>Binary packet construction for direct PLC bit-level control over UDP:</strong></p>
+            <pre><code>
+// PHP: Binary Packet Construction for PLC Bit Control
+$mypacket = pac
+            </code></pre>
+        </div>
+
+        <div class="project project-dark">
             <h3>Industrial Power Monitoring & Data Acquisition Platform</h3>
 
             <p><strong>This system represents a full-stack industrial data pipeline—from field devices to
@@ -538,67 +672,7 @@
             <!-- </section> -->
         </div>
 
-        <div class="project project-dark">
-            <h3>Voice Over IP (VoIP) / PBX & Real-Time Media System</h3>
-
-            <p>
-                I designed and deployed a full VoIP and real-time communication system integrating telephony, video
-                streaming, PLC controls, and legacy intercom infrastructure. This system combined modern IP-based
-                communication with traditional analog systems in a highly controlled, industrial environment.
-            </p>
-
-            <p><strong>System Architecture:</strong></p>
-            <ul>
-                <li><strong>Core PBX:</strong> Asterisk (SIP server) running on Debian Linux</li>
-                <li><strong>Signaling & Media:</strong> SIP for call control, RTP for real-time audio streams</li>
-                <li><strong>Network:</strong> Layer 3 switching with QoS prioritization for voice/video traffic</li>
-                <li><strong>Wireless:</strong> Wi-Fi access points supporting mobile VoIP devices and PDAs</li>
-                <li><strong>Video:</strong> Axis IP cameras and media servers providing live video streams</li>
-            </ul>
-
-            <p><strong>Custom Software & Integration:</strong></p>
-            <ul>
-                <li>Developed custom SIP client integrations using open-source SIP stacks</li>
-                <li>Built interface and control layers using <strong>Python, PHP, and Bash scripting</strong></li>
-                <li>Created web-based configuration tools using <strong>Apache and Django</strong> for dial plan and
-                    device management</li>
-                <li>Integrated <strong>VLC (VideoLAN)</strong> for real-time video streaming into custom HMI
-                    applications</li>
-                <li>Developed GUI interfaces using <strong>Tkinter</strong> for embedded client systems</li>
-            </ul>
-
-            <p><strong>Devices & Endpoints:</strong></p>
-            <ul>
-                <li>Aastra 480 VoIP desktop master stations</li>
-                <li>Hitachi IP5000 Wi-Fi VoIP phones</li>
-                <li>Symbol PPT8800 PDA devices with custom SIP + video clients</li>
-                <li>Touchscreen HMI systems for control and monitoring</li>
-            </ul>
-
-            <p><strong>Industrial & Legacy System Integration:</strong></p>
-            <ul>
-                <li>Bridged IP-based VoIP systems to traditional analog intercoms using <strong>ATA (Analog Telephone
-                        Adapters)</strong></li>
-                <li>Integrated telephony control with <strong>PLC-based intercom and locking systems</strong></li>
-                <li>Enabled coordinated control between voice communication, video monitoring, and physical security
-                    systems</li>
-            </ul>
-
-
-            <div class="media-section">
-                <h4>System Architecture & Screens</h4>
-                <img src="assets/pdaControl.webp" alt="VOIP system architecture" style="width: 100%; max-width: 800px;"
-                    onclick="openLightbox(this.src)">
-            </div>
-
-            <h4>Core Technologies</h4>
-            <ul>
-                <li><strong>Telephony & Media:</strong> Asterisk, SIP, RTP, Axis streaming</li>
-                <li><strong>Backend & Integration:</strong> Python, Django, PHP, Bash</li>
-                <li><strong>Networking:</strong> Layer 3 switching, QoS, Wi-Fi VoIP</li>
-                <li><strong>Systems Integration:</strong> PLC control, ATA bridging, HMI interfaces</li>
-            </ul>
-        </div>
+        
 
         <div class="project project-dark">
             <h3>Video Visitation System</h3>
